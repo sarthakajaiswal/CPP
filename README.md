@@ -1,2 +1,2 @@
 MasterClass in CPP
-50 structure exercise
+50 Class exercise
