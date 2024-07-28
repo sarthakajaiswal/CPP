@@ -1,2 +1,2 @@
-# CPP
-Masterclass in CPP codes
+MasterClass in CPP
+50 structure exercise
