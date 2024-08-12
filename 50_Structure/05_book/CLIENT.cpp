@@ -24,6 +24,6 @@ int main(void) {
         67, "Computer Science"
     );
 
-    std::cout << sizeof(Book);
+    std::cout << my_book;
 }
 

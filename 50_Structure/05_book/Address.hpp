@@ -20,6 +20,7 @@ class Address {
             std::string country,
             unsigned int pin_code
         );
+    friend std::ostream& operator<<(std::ostream& os, const Address& address_object);
 };
 
 #endif

@@ -10,4 +10,5 @@ class ItemWeight {
     
     public:
         ItemWeight(float weight, std::string unit);
+    friend std::ostream& operator<<(std::ostream& os, const ItemWeight& weight);
 };

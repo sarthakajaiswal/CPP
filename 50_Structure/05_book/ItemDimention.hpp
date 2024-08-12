@@ -17,4 +17,5 @@ class ItemDimention {
             float height,
             std::string unit
         );
+    friend std::ostream& operator<<(std::ostream& os, const ItemDimention& dimention);
 };

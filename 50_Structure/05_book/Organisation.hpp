@@ -20,4 +20,5 @@ class Organisation {
             unsigned int pin_code,
             unsigned long long contact, 
             std::string email);
+        friend std::ostream& operator<<(std::ostream& os, const Organisation& organisation_obj);
 };

@@ -73,4 +73,33 @@ Book::Book(
         m_best_seller_rank(best_seller_rank, best_seller_category),
         m_reviews(review, review_count) {
 
-        }      
+        }
+
+std::ostream& operator<<(std::ostream& os, const Book& book_object) {
+    os << "Book Information : " << std::endl
+        << "Title: " << book_object.m_title << std::endl;
+    
+    os << "Author(s): ";
+    int i=0;
+    while(i<book_object.m_authors.size()) {
+        std::cout << book_object.m_authors[i];
+        ++i;
+    }
+    os << std::endl;
+    os << "Language: " << book_object.m_language << std::endl
+        << "ISBN10: " << book_object.m_isbn10 << std::endl
+        << "ISBN13: " << book_object.m_isbn13 << std::endl
+        << "Edition: " << book_object.m_edition << std::endl
+        << "Date of Publication: " << book_object.m_date_of_publication << std::endl
+        << "Number of Pages: " << book_object.m_number_of_pages << std::endl
+        << "Reading Age: " << book_object.m_age_lower_limit << " and above" << std::endl
+        << "Publisher: " << book_object.m_publisher << std::endl
+        << "Packer: " << book_object.m_packer << std::endl
+        << "Country Origin: " << book_object.m_country_origin << std::endl
+        << "Product Generic Name: " << book_object.m_generic_item_name << std::endl
+        << "Price : " << book_object.m_price << std::endl
+        << "Best Seller Ranks: " << book_object.m_best_seller_rank << std::endl
+        << "Review: " << book_object.m_reviews << std::endl;
+
+    return os;
+}

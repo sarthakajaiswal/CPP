@@ -12,4 +12,5 @@ class BestSellerRank {
             unsigned short rank,
             std::string category
         );
+    friend std::ostream& operator<<(std::ostream& os, const BestSellerRank& object);
 };

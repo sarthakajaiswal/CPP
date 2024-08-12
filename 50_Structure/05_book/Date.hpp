@@ -10,4 +10,6 @@ class Date{
 
     public:
         Date(int day, int month, int year);
+
+    friend std::ostream& operator<<(std::ostream& os, const Date& date_object);
 };
