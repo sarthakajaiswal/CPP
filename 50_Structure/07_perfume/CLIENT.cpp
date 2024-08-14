@@ -17,4 +17,6 @@ int main(void) {
     my_perfume.set_perfume_contents({"Ethyl Alcohol", "Diethyl Pthlate", "Fragrance", "Benzophenone-3", "BHT", "Aqua", "Permitted Colour", "Alcohol"}),
 
     std::cout << my_perfume;
+
+    return 0;
 }
