@@ -1,5 +1,5 @@
 /*
-    GOAL    : To prove the default inaccesibility of members inside class 
+    GOAL    : To demonstrate the default inaccesibility of members inside class 
     AUTHOR  : Sarthak A. Jaiswal 
     DATE    : 20 Feb 2025 
 */
