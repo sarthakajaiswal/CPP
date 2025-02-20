@@ -41,7 +41,15 @@ class Date
 class C 
 {
     public: 
-        void f(C* pC, /* optional other params... */ ); 
+        void f(C* pC, /* optional other params... */ ) 
+        {
+        
+        } 
+
+        void f() // 'C* this' is automatically added 
+        {
+            
+        } 
 }; 
 
 int main(void) 
