@@ -3179,4 +3179,823 @@ int main(void)
 
     return 0; 
 }
+=============================== 08 MARCH =========================================================================================
+#include <iostrea> #includ e<iostream> #include <iostream> 
+<iostream> iostrea> #includ e<iostream> #include <iostream> #include <iostream> #include <iostream. #include <iostream> #include <iostream> #include <iostream> #include <iostream> 
+#include <iostream> #include <iostream> #Include <iostream> 
 
+#include <iostream> 
+#include <string> 
+#include <vector> 
+
+using std::cout; 
+using std::endl; 
+using std::string; 
+using std::string; 
+
+class Date 
+{
+    private: 
+        int day, month, year; 
+    public: 
+        Date(int init_day, int init_month, int init_year) 
+        {
+            day = init_day; 
+            month = init_month; 
+            year = init_year; 
+        }
+
+        void show() 
+        {
+            cout << day << "/" << month << "/" << year << endl; 
+        }
+}; 
+
+void vector_demo(void); 
+
+int main(void) 
+{
+    vector_demo(); 
+    return 0; 
+}
+
+void vector_demo(void) 
+{
+    // vector of ints 
+    vector<int> ivec1; 
+    vector<int> ivec2{10, 20, 30, 40, 50}; 
+    vector<int> ivec3(ivec2); 
+    vector<int> ivec4(5); 
+    vector<int> ivec5(5, 100); 
+
+    // transverse thorough all vectors 
+    // ivec1: using index 
+    cout << "ivec1: using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec1.size(); ++i) 
+        cout << "ivec1[" << i << "] = " < ivec1[i] << endl; 
+
+    cout << "ivec1: using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec1.begin(); iter != ivec1.end(); ++ivec1)
+        cout << "*iter = " << *iter << endl; 
+
+    for(vector<int>::iterator iter = ivec1.begin(); iter != ivec1.end(); ivec1++) 
+        cout << "*iter = " << *iter << endl; 
+
+    for(vector<int>::iterator iter = ivec1.begin();  iter != ivec2.end(); iter = iter + 1) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "ivec2 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec2.size(); ++i) 
+        cout << "ivec2[" << i << "] = " << ivec2[i] << endl; 
+
+    cout << "ivec2 : using iterator " << endl; 
+    for(vector<int>::iterator iter = ivec2.begin(); iter != ivec2.end(); ++iter)
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "ivec3 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec3.size(); ++i) 
+        cout << "ivec3[" i << "] = " << ivec3 << endl; 
+
+    cout << "ivec3: using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec3.begin(); iter != ivec3.end(); ++iter ) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "ivec4 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec4.size(); ++i) 
+        cout << "ivec4[" << i << "] = " << ivec4[i] << endl; 
+
+    cout << "ivec4 : using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec4.begin(); iter != ivec4.end(); ++iter)
+        cout << "*iter = " << iter << endl; 
+
+    cout << "ivec5 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec5.size(); ++i) 
+        cout << "ivec5[" << i << "] = " << ivec5[i] << endl; 
+
+    cout << "ivec5: using iterator " << endl; 
+    for(vector<int>::iterator iter = ivec5.begin(); iter != ivec5.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    vector<float> fvec1; 
+    vector<float> fvec2{1.1f, 2.2f, 3.3f, 4.4f}; 
+    vector<float> fvec3(fvec2); 
+    vector<float> fvec4(5); 
+    vector<float> fvec5(5, 100); 
+
+    cout << "---------------" << endl; 
+    cout << "fvec1 : using index" << endl; 
+    for(vector<float>::size_type i = 0; i < fvec1.size(); ++i) 
+        cout << "fvec1[" << i << fvec1[i] << endl; 
+
+    for(vector<float>::iterator iter = fvec1.begin(); iter != fvec1.end(); ++iter) 
+        cout << "*iter = " << iter << endl; 
+
+    cout << "fvec2 : using index" << endl; 
+    for(vector<float>::size_type i = 0; i < fvec2.size(); ++i) 
+        cout << "fvec2[" << i << "] = " << fvec2[i] << endl; 
+
+    cout << "fvec2 : using iterator" << endl; 
+    for(vector<int>::iterator iter = fvec2.begin(); iter != fvec2.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "fvec3 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < fvec3.size(); ++i) 
+        cout << "fvec3[" << i << "] = " << endl; 
+
+    for(vector<int>::iterator iter = fvec3.begin(); iter != fvec3.end(); ++iter ) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "fvec4 : using index" << endl; 
+    for(vector<float>::size_type i = 0; i < ivec4.size(); ++i) 
+        cout << "fvec4[" << i << "] = " << fvec4[i] << endl; 
+    
+    cout << "fvec4 : using iterator" << endl; 
+    for(vector<float>::iterator iter = fvec4.begin(); iter != fvec4.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "fvec5 : using index " << endl; 
+    for(vector<float>::size_type i = 0; i < fvec5.size(); ++i) 
+        cout << "fvec5[" << i << "] = " << fvec5[i] << endl; 
+
+    cout << "fvec5 : using iterator" << endl; 
+    for(vector<float>::iterator iter = fvec5.begin(); iter != fvec5.end(); ++iter) 
+        cout << "*iter = " << *iter << endl;  
+    //-------------- 
+    
+    vector<string> str_vec1;  // empty
+    vector<string> str_vec2{
+                    string("Hello"), 
+                    string("World"), 
+                    string("Iterator"), 
+                    string("Amazing!")
+                };
+    vector<string> str_vec3(str_vec2); 
+    vector<string> str_vec4(5); 
+    vector<string> str_vec5(5, "ONE"); 
+
+    cout << "str_vec1 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec1.size(); ++i) 
+        cout << "str_vec1[" << i << "] = " << str_vec1[i] << endl; 
+
+    cout << "str_vec1 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec1.begin(); iter != str_vec1.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec2 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec2.size(); ++i) 
+        cout << "str_vec2[" << i << "] = " << str_vec2[i] << endl; 
+
+    cout << "str_Vec2: using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec2.begin(); iter != str_vec2.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec3 : using index " << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec3.size(); ++i) 
+        cout << "str_vec3[" << i << str_vec3[i] << endl; 
+
+    cout << "str_vec3: using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec3.begin(); iter != str_vec3.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec4 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec4.size(); ++i)  
+        cout << "str_vec4[" << i << "] = " << str_vec4[i] << endl; 
+
+    cout << "str_vec4 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec4.begin(); iter != str_vec4.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec5 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec5.size(); ++i) 
+        cout << "str_vec5[" << i << "] = " << str_vec5[i] << endl; 
+
+    cout << "str_vec5 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec5.begin(); iter != str_vec5.end(); ++iter )
+        cout << "*iter = " << *iter << endl; 
+    // --------------- 
+
+    vector<Date> date_vec1; 
+    vector<Date> date_vec2{
+        Date(8, 3, 2025), 
+        Date(9, 3, 2025), 
+        Date(10, 3, 2025), 
+        Date(11, 3, 2025) 
+    }; 
+    vector<Date> date_vec3(date_vec2); 
+    vector<Date> date_vec4(5); 
+    vector<Date> date_vec(5, Date(9, 3, 2025)); 
+
+    cout << "date_vec1: using index " << endl; 
+    for(vector<string>::size_type i = 0; i < date_vec1.size(); ++i) 
+        date_vec1[i].show(); 
+
+    cout << "date_vec1 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec1.begin(); iter != date_vec1.end(); ++iter) 
+        iter->show(); 
+
+    cout << "date_vec2 : using_index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec1.size(); ++i) 
+        date_vec1[i].show(); 
+
+    cout << "date_vec1: using iteratoe" << endl; 
+    for(vector<Date>::iterator iter = date_vec1.begin(); iter 1= date_vec1.end(); ++iter) 
+        iter->show(); 
+
+    cout << "date_vec2 : using index" << endl; 
+    for(vector<Date>::size_type  = 0; i < date_vec2.size(); ++i) 
+        date_vec2[i].show(); 
+
+    cout << "date_vec2 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec2.begin(); iter != date_vec2.end(); ++iter ) 
+        iter->show(); 
+
+    cout << "date_vec3: using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec3.size(); ++i) 
+        date_vec3[i].show(); 
+
+    cout << "date_vec3 : using index" << endl; 
+    for(vector<Date>::iterator iter = date_vec3.begin(); iter != date_vec3.end(); ++iter) 
+        iter->show(); 
+
+    cout << "date_vec4: using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec4.size(); ++i) 
+        date_vec4[i].show(); 
+
+    cout << "date_vec4 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec4.begin(); iter != date_vec4.end(); ++iter) 
+        iter->show(); 
+
+    cout << "date_vec5 : using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec5.size(); ++i) 
+        date_vec5[i].show(); 
+
+    cout << "date_vec5 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec5.begin(); iter != date_vec5.end(); ++iter ) 
+        iter->show(); 
+}
+
+struct Date myDate = {1, 1, 1970}; 
+struct Date* pDate = &myDate; 
+(*pDate).month == pDate->month 
+(*pDate).day   == pDate->day; 
+(*pDate).year  == pdate->year 
+
+#include <iostream> 
+#include <string> 
+#include <vector> 
+
+using std::cout; // object of class ostream | class ostream and object cout are defined in std namespace 
+using std::endl;  // endl is defined in namespace std 
+using std::string; // string is class defined in std namesoace 
+using std::vector; // vector is a 'class template' defined in std namespace 
+
+class date 
+{
+    private: 
+        int day, month, year; 
+    public: 
+        Date(int init_day, int init_month, int init_year) 
+        {
+            day = init_day; 
+            month = init_month; 
+            year = init_year; 
+        }
+
+        void show() 
+        {
+            cout << day << "/" << month << "/" << year << endl; 
+        }
+}; 
+
+void vector_demo(void); 
+
+int main(void) 
+{
+    vector_demo(); 
+    return 0; 
+}
+
+void vector_demo(void) 
+{
+    // vector of integers 
+    vector<int> ivec1; // empty 
+    vector<int> ivec2{10, 20, 30, 40, 50}; 
+    vector<int> ivec3(ivec2); 
+    vector<int> ivec4(5); 
+    vector<int> ivec5(5, 100); 
+
+    cout << "ivec1 : using idex" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec1.size(); ++i) 
+        cout << "ivec1[" << i << "] = " << ivec1[i] << endl; 
+
+    cout << "ivec1 : using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec1.begin(); iter != ivec1.end(); ++iter ) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "ivec2: using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec1.size(): ++i) 
+        cout << "ivec2[" << i << "] = " << ivec2[i] << endl; 
+
+    cout << "ivec2 : using iterator " << endl; 
+    for(vector<int>::size_type iter = ivec3.begin(); iter != ivec4.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "ivec3 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec2.size(); ++i) 
+        cout << "ivec3[" << i << "] = " << ivec3[i] << endl; 
+
+    cout << "ivec3 : using iterator " << endl; 
+    for(vector<int>::iterator iter = ivec3.begin(); iter != ivec3.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "ivec4: using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec4.size(); ++i); 
+        cout << "ivec4[" << i << "] = " << ivec4[i] << endl; 
+
+    cout << "ivec4 : using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec4.begin(); iter != ivec4.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "ivec5 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec5.size(); ++i) 
+        cout << "ivec5[" << i << "] = " << ivec5[i] << endl; 
+
+    cout << "ivec5 : using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec5.begin(); iter != ivec5.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    // vector of floats 
+    vector<float> fvec1; 
+    vector<float> fvec2{1.1f, 2.2f, 3.3f, 4.4f}; 
+    vector<float> fvec3(fvec3); 
+    vector<float> fvec4(5); 
+    vector<float> fvec5(5, 1.1f); 
+
+    cout << "fvec1 : using index" << endl; 
+    for(vector<float>::size_type i = 0; i < fvec1.size(); ++i) 
+        cout << "fvec1[" << i << "] = " << fvec1[i] << endl; 
+
+    cout << "fvec1 : using iterator" << endl; 
+    for(vector<float>::iterator iter = fvec1.begin(); iter = fvec1.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "fvec2 : using index" << endl; 
+    for(vector<float>::size_type i = 0; i < fvec2.size(); ++i) 
+        cout << "fvec2[" << i << "] = " << fvec2[i] << endl; 
+
+    cout << "fvec2 : using iterator" << endl; 
+    for(vector<float>::iterator iter = fvec2.begin(); iter != fvec2.end(); ++iter)  
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "fvec3 : using index" << endl; 
+    for(vector<float>::size_type i = 0; i < fvec3.size(); ++i) 
+        cout << "fvec3[" << i << "] = " << fvec3[i] << endl; 
+
+    cout << "fvec3 : using iterator " << endl; 
+    for(vector<float>::iterator iter = fvec3.begin(); iter != fvec3.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "fvec4 : using index" << endl; 
+    for(vector<float>::size_type i = 0 ; i < fvec4.size(); ++i) 
+        cout << "fvec4[" <<  i << "] = " << fvec4[i] << endl; 
+
+    cout << "fvec4 : using iterator " << endl; 
+    for(vector<float>::iterator iter = fvec4.begin(); iter != fvec4.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+    
+    cout < "fvec5 : using indeX" << endl; 
+    for(vector<float>::size_type i = 0;  i < fvec5.size(); ++i) 
+        cout << "fvec[" << i << "] = " << fvec[i] << endl; 
+
+    cout << "fvec5 : using iterator" << endl; 
+    for(vector<int>::iterator iter = fvec5.begin(); iter != fvec5.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    // vector of string 
+    vector<string> str_vec1; 
+    vector<string> str_vec2{
+                string("Hello"), 
+                string("World"), 
+                string("Iterator"), 
+                string("Amazing!")
+            }; 
+    vector<string> str_vec3(str_vec2); 
+    vector<string> str_vec4(5); 
+    vector<string> str_vec5(5, string("ONE")); 
+
+    cout << "str_vec1: using index" << endl; 
+    for(vector<string>::size_type i = 0; i < fvec1.size(); ++i) 
+        cout << "str_vec[" << i << "] = " << str_vec1[i] << endl; 
+
+    cout << "str_vec1 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec1.begin(); iter != str_vec1.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec2 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec2.size(); ++i) 
+        cout << "str_vec2[" << i << "] = " << str_vec2[i] << endl; 
+    
+    cout << "str_vec2: using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec2.begin(); iter != str_vec2.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec3 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec3.size(); ++i) 
+        cout << "str_vec3[" << i << "] = " << str_vec3[i] << endl; 
+
+    cout << "str_vec3 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec3.begin(); iter != str_vec3.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec4 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec4.size(); ++iter) 
+        cout << "str_vec4[" << i << "] = " << str_vec4[i] << endl; 
+
+    cout << "str_vec4 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vc4.begin(); iter != str_vec4.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec5 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec5.size(); ++i) 
+        cout << "str_Vec5[" << i << "] = " << str_vec5[i] << endl; 
+
+    cout << "str_vec5: using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec5.begin(); iter != str_vec5.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    // vector of string date 
+    vector<Date> date_vec1; 
+    vector<Date> date_vec2{
+                    Date(9, 2, 2025), 
+                    Date(10, 2, 2025), 
+                    Date(11, 2, 2025), 
+                    Date(12, 2, 2025) 
+                }; 
+    vector<Date> date_vec3(date_vec2); 
+    vector<Date> date_vec4(5); 
+    vector<Date> date_vec5(5, Date(1, 1, 1970)); 
+
+    cout << "date_vec1 : using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec1.size(); ++i) 
+        date_vec1[i].show(); // Date::show(date_vec1);  
+
+    cout << "date_vec : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec1.begin(); iter != date_vec1.end(); ++iter) 
+        iter->show(); 
+
+    cout << "date_vec2 : using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec2.end(); ++i) 
+        date_vec2[i].show(); // Date::show(&date_vec2[i]); 
+
+    cout << "date_vec2 : using iterator " << endl; 
+    for(vector<Date>::iterator iter; iter != date_vec2.end(); iter++) 
+        iter->show(); 
+
+    cout << "date_vec3: using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec3.size(); ++i) 
+        date_vec3[i].show(); 
+
+    cout << "date_vec3 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec4.begin(); iter != date_vec4.end(); ++iter) 
+        iter->show(); 
+
+    cout << "date_vec4 : using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec4.size(); ++i) 
+        date_vec4[i].show(); 
+
+    cout << "date_vec4 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec4.begin(); iter != date_vec4.end(); ++iter) 
+        iter->show(); 
+
+    cout << "date_vec5 : using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec5.size(); ++i) 
+        date_vec5[i].show(); 
+
+    cout << "date_vec5: using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec5.begin(); iter != date_vec5.end(); ++iter)   
+        iter->show(); 
+}
+
+#include <iostream> 
+#include <string> 
+#include <vector> 
+
+using std::cout; 
+using std::endl; 
+using std::string; 
+using std::vector; 
+
+class Date 
+{
+    private: 
+        int day, month, year; 
+    public: 
+        Date(int init_day, int init_month, int init_year) 
+        {
+            this->day = init_day; 
+            this->month = init_month; 
+            this->year = init_year; 
+        }
+
+        void show() 
+        {
+            cout << day << "/" << month << "/" << year << endl; 
+        }
+}; 
+
+void vector_demo(void); 
+
+int main(void) 
+{
+    vector_demo(); 
+    return 0; 
+}
+
+void vector_demo(void) 
+{
+    // vector of int 
+    vector<int> ivec1; 
+    vector<int> ivec2{10, 20, 30, 40, 50}; 
+    vector<int> ivec3(ivec2); 
+    vector<int> ivec4(5); 
+    vector<int> ivec5(5, 100); 
+
+    cout << "ivec1 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec1.size(); ++i) 
+        cout << "ivec1[" << i << "] = " << ivec1[i] << endl; 
+
+    cout << "ivec1: using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec1.begin(); iter != ivec1.end(); ++iter ) 
+        cout << "*iter = " << *iter << endl; 
+    
+    cout << "ivec2 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec2.size(); ++i) 
+        cout << "ivec2[" << i << "] = " << ivec2[i] << endl; 
+
+    cout << "ivec2 : using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec2.begin(); iter != ivec2.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "ivec3 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec3.size(); ++i) 
+        cout << "ivec[" << i << "] = " << ivec3[i] << endl; 
+
+    cout << "ivec3 : using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec3.begin(); iter != ivec3.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "ivec4 : using inex" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec4.size(); ++i) 
+        cout << "ivec4[" << i << "] = " << ivec4[i] << endl; 
+
+    cout << "ivec4 : using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec4.begin(); iter != ivec4.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "ivec5 : using index" << endl; 
+    for(vector<int>::size_type i = 0; i < ivec5.size(); ++i) 
+        cout << "ivec5[" << i << "] = " << ivec5[i] << endl; 
+    
+    cout << "ivec5: using iterator" << endl; 
+    for(vector<int>::iterator iter = ivec5.begin(); iter != ivec6.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    // vector of float 
+    vector<float> fvec1; 
+    vector<float> fvec2{1.1f, 2.2f, 3.3f, 4.4f}; 
+    vector<float> fvec3(fvec3); 
+    vector<float> fvec4(5); 
+    vector<float> fvec5(5, 1.1f); 
+
+    cout << "fvec1 : using index" << endl; 
+    for(vector<float>::size_type i = 0; i < fvec1.size(); ++i) 
+        cout << "fvec1[" << i << "] = " << fvec[i] << endl; 
+
+    cout << "fvec1 : using iterator" << endl; 
+    for(vector<float>::iterator iter = fvec1.begin(); iter != fvec1.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "fvec2 : using index" << endl; 
+    for(vector<float>::size_type i = 0; i < fvec2.size(); ++i) 
+        cout << "fvec2[" << i << "] = " << fvec2[i] << endl; 
+
+    cout << "fvec2 : using iterator" << endl; 
+    for(vector<float>::iterator iter = fvec2.begin(); iter != fvec2.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "fvec3 : using index" << endl; 
+    for(vector<float>::size_type i = 0; i < fvec3.size(); ++i) 
+        cout << "fvec3[" << i << "] = " << fvec3[i] << endl; 
+    
+    cout << "fvec3 : using iterator" << endl; 
+    for(vector<float>::iterator iter = fvec3.begin(); iter != fvec3.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "fvec4: using index" << endl; 
+    for(vector<float>::size_type i = 0; i < fvec4.size(); ++i) 
+        cout << "fvec4[" << i << "] = " << fvec4[i] << endl; 
+    
+    cout << "fvec4 : using iterator" << endl; 
+    for(vector<float>::iterator iter = fvec3.begin(); iter != fvec3.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "fvec5 : using index" << endl; 
+    for(vector<float>::size_type i = 0; i < fvec1.size(); ++i) 
+        cout << "fvec5[" << i << "] = " << fvec5[i] << endl; 
+
+    cout << "fvec5 : using iterator" << endl; 
+    for(vector<float>::iterator iter = fvec5.begin(); iter != fvec5.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    // vector of string 
+    vector<string> str_vec1; 
+    vector<string> str_vec2{
+                    string("Hello"); 
+                    string("World"); 
+                    string("Amazing"); 
+                    string("CPP"); 
+                }; 
+    vector<string> str_vec3(str_vec2); 
+    vector<string> str_vec4(5); 
+    vector<string> str_vec5(5, string("CPA-CPP")); 
+
+    cout << "str_vec1: using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec1.size(); ++i) 
+        cout << "str_vec1[" << i << "] = " << str_vec1[i] << endl; 
+
+    cout << "str_vec1 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec1.begin(); iter != str_vec1.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec2 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec2.size(); ++i) 
+        cout << "str_vec2[" << i << "] = " << str_vec2[i] << endl; 
+
+    cout << "str_vec2 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec2.begin(); iter != str_vec2.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec3: using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec3.size(); ++i) 
+        cout << "str_vec3[" << i << "] = " << str_vec3[i] << endl; 
+
+    cout << "str_vec3 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec3.begin(); iter != str_vec3.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec4 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec4.size(); ++i) 
+        cout << "str_vec4[" << i << "] = " << str_vec4[i] << endl; 
+    
+    cout << "str_vec4 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec4.begin(); iter != str_vec4.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    cout << "str_vec5 : using index" << endl; 
+    for(vector<string>::size_type i = 0; i < str_vec5.size(); ++i) 
+        cout << "str_vec5[" << i << "] = " << str_vec5[i] << endl; 
+
+    cout << "str_vec5 : using iterator" << endl; 
+    for(vector<string>::iterator iter = str_vec5.begin(); iter != str_vec5.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+
+    // vector of Date 
+    vector<Date> date_vec1; 
+    vector<Date> date_vec2{
+                    Date(8, 3, 2025), 
+                    Date(9, 3, 2025), 
+                    Date(10, 3, 2025), 
+                    Date(11, 3, 2025) 
+                }; 
+    vector<Date> date_vec3(date_vec2); 
+    vector<Date> date_vec4(5); 
+    vector<Date> date_vec5(5, Date(1, 1, 1970)); 
+     
+    cout << "date_vec1: using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec1.size(); ++i) 
+        date_vec1[i].show(); 
+
+    cout << "date_vec1 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec1.begin(); iter != date_vec1.end(); ++iter) 
+        iter->show(); 
+
+    cout << "date_vec2 : using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec2.size(); ++i) 
+        date_vec2[i].size(); 
+
+    cout << "date_vec2 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec2.begin(); iter != date_vec2.end(); ++iter) 
+        iter->show(); 
+
+    cout << "date_vec3: using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec3.size(); ++i) 
+        date_vec3[i].show(); 
+
+    cout << "date_vec3 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec3.begin(); iter != date_vec3.end(); ++iter) 
+        iter->show(); 
+
+    cout << "date_vec4 : using index" << endl; 
+    for(vector<Date>::size_type i = 0; i < date_vec4.size(); ++i) 
+        date_vec4[i].show(); 
+
+    cout << "date_vec4 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec4.begin(); iter != date_vec4.end(); ++iter) 
+        iter->show(): 
+
+    cout << "date_vec5 : using index" << endl; 
+    for(vector<Date>::size_type i =0 ; i < date_vec5.size(); ++i) 
+        date_vec5[i].show(); 
+
+    cout << "date_vec5 : using iterator" << endl; 
+    for(vector<Date>::iterator iter = date_vec1.begin(); iter != date_vec1.end(); ++iter)   
+        iter->show(); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+void int_demo(void); 
+
+int main(void) 
+{
+    int_demo(); 
+    return (0); 
+}
+
+void int_demo(void) 
+{
+    int* p =  NULL; 
+
+    p = (int*)malloc(sizeof(int)); 
+    if(p == NULL) 
+    {
+        puts("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    *p = 100; 
+    printf("%d\n" *p); 
+
+    free(p); 
+    p = NULL; 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+void int_demo(void); 
+
+int main(void) 
+{
+    int_demo(); 
+    return (0); 
+}
+
+void int_demo(void) 
+{
+    int* p = NULL; 
+
+    p = (int*)malloc(sizeof(int)); 
+    if(p == NULL) 
+    {
+        printf("Error in allocating memory"); 
+        return (0); 
+    }
+
+    *p = 100; 
+    printf("%d\n", *p); 
+
+    free(p); 
+    p = NULL; 
+}
+
+#include <iostream> 
+#include <vector> 
+#include <cmath> 
+
+double rms(std::vector<double>& d_vec) 
+{
+    double rms_sum = 0.0; 
+
+    if(d_vec.size() == 0) 
+        return (0.0); 
+
+    for(std::vector<double>iterator iter = d_vec.begin(); iter != d_vec.end(); ++iter) 
+    {
+        double d = *iter; 
+        rms_sum += d * d; 
+    }   
+    
+    return sqrt(rms_sum/d_vec.size()); 
+}
+
+double rms(std::vector<double>& d_vec) 
+{
+    double rms_sum = 0.0; 
+
+    for(std::vector<double>::iter = d_vec.begin(); iter != d_vec.end(); ++iter) 
+        rms_sum = (*iter) * (*iter); 
+
+    return sqrt(rms_sum/d_vec.size()); 
+}
