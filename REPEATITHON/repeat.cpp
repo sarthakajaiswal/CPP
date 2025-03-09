@@ -3999,3 +3999,998 @@ double rms(std::vector<double>& d_vec)
 
     return sqrt(rms_sum/d_vec.size()); 
 }
+
+================================================= 09 MARCH ================================================================================================================
+// Stage 1: PROCEDURAL PROGRAMMING : USING BUILT IN FUNCTIONS 
+#include<stdio.h> 
+
+int main(void) 
+{
+    double G = 6.67 * 10e-11;   // universal constant of gravitation 
+    double m1;         // for storing mass of object 1 in kg
+    double m2;          // for storing mass of object 2 in kgs
+    double r;          // for storing distance between objects in meter 
+    double F;           // for storing force in Newtons 
+
+    printf("Enter mass of object 1 in kgs: "); 
+    scanf("%lf", &m1); 
+
+    printf("Enter mass of object 2 in kgs: " ); 
+    scanf("%lf", &m2); 
+
+    pintf("Enter distance between the objects in meters: "); 
+    scanf("%lf", &r); 
+
+    if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+    {
+        printf("Invalid values for mass or distance\n"); 
+        return (-1); 
+    }
+
+    F = (G * m1 * m2) / (r * r); 
+
+    printf("Force of gravitation : %lf Newton\n", F); 
+
+    return (0); 
+}
+
+#include <stdio.h> 
+
+int main(void) 
+{
+    double G = 6.67 * 10e-11; // universal constant of gravitational 
+    double m1;  // for storing mass of object 1 in kgs 
+    double m2;  // for storing mass of object 2 in kgs 
+    double r;   // for storing distance between objects in meter 
+    double F;   // for storing force in Newton 
+
+    printf("Enter mass of object 1 in kgs : "); 
+    scanf("%lf", &m1); 
+
+    printf("Enter mass of object 2 in kgs : "); 
+    scanf("%lf", &m2); 
+
+    printf("Enter distance between the objects in meter : "); 
+    scanf("%lf", &r); 
+
+    if(m1 <= 0.0f || m2 <= 0.0f || r <= 0.0f) 
+    {
+        printf("Invalid values for mass and/or distance"); 
+        return (-1); 
+    }
+
+    F = (G * m1 * m2) / (r * r); 
+
+    printf("Force of gravitation = %lf Newton", F); 
+
+    return (0); 
+}
+
+#include <stdio.h> 
+
+int main(void) 
+{
+    double G = 6.67 * 10e-11; // gravitational constant 
+    double m1; // for storing mass og object 1 in kgs
+    double m2: // for storing mass of object 2 in kgs
+    double r;  // for storing distance between objects in meters 
+    double F;  // for storing force of gravitation in Newton 
+
+    printf("Enter mass of object 1 in kgs"); 
+    scanf("%lf", &m1); 
+
+    printf("Enter mass of object 2 in kgs"); 
+    scanf("%lf", &m2); 
+
+    printf("Enter distance in objects in meter"); 
+    scanf("%lf", &r); 
+
+    if(m1 = 0.0 || m2 <= 0.0 || r <= 0.0) 
+    {
+        printf("Invalid values for mass and/or distance"); 
+        return (-1); 
+    }
+
+    F = (G * m1 * m2) / (r * r); 
+
+    printf("Gravitational force = %lf Newton\n", F); 
+
+    return (0); 
+}
+
+// STAGE 2 : OBJECT BASED PROGRAMMING IN C++ : USING BUIT IN OBJECTS 
+#include <iostream> 
+
+int main(void) 
+{
+    using std::cout; // ostream | std::ostream 
+    using std::cin; // istream | std::istream 
+
+    double G = 6.67 * 10e-11; // universal constant of gravitation 
+    double m1; // for storing mass of object 1 in kgs 
+    double m2; // for storing mass of object 2 in kgs 
+    double r;  // for storing distance between objects 
+    double F;  // for storing force of gravitation in Newton 
+
+    cout << "Enter mass of object 1 in kgs : " << endl; 
+    cin >> m1; 
+
+    cout << "Enter mass of object 2 in kgs : " << endl; 
+    cin >> m2; 
+
+    cout << "Enter distance between objects in meters : " << endl; 
+    cin >> r; 
+
+    if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+    {
+        cout << "Invalid values for mass and/or distace" << endl; 
+        return (-1); 
+    }
+
+    F = (G * m1 * m2) * (r * r) 
+
+    cout << "Force of gravitation = " << F << " Newtons" << endl; 
+
+    return (0); 
+}
+
+// STAGE 2 : OBJECT BASED PROGRAMMING IN C++ : USING BUILT IN FUNCTIONS 
+#include <iostrem> 
+
+int main(void) 
+{
+    using std::endl; 
+    using std::cout; 
+    using std::cin; 
+
+    double G = 6.67 * 10e-11; // universal constant of gravitation 
+    double m1; // for storing mass of object 1 in kgs 
+    double m2; // for storing mass of object 2 in kgs 
+    double r; // for storing distance between objects in meter 
+    double F; // for storing force in  Newton 
+
+    cout << "Enter mass of object 1 in kgs: "; 
+    cin >> m1; 
+
+    cout << "Enter mass of object 2 in kgs : "; 
+    cin >> m2; 
+
+    cout << "Enter distance in meter : "; 
+    cin >> r; 
+
+    if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+    {
+        cout << "Invalid values for massand/or distance" << endl; 
+        return (-1); 
+    }
+
+    F = (G * m1 * m2) / (r * r); 
+
+    cout << "Gravitational force = " << F << " Newton" << endl; 
+
+    return (0); 
+}
+
+#include <iostream> 
+
+int main(void) 
+{
+    using std::cout; 
+    using std::cin; 
+    using std::endl; 
+
+    double G = 6.67 * 10e-11; // for universal gravitational constant 
+    double m1; // for storing mass of object 1 in kgs 
+    double m2; // for storing mass of object 2 in kgs 
+    double r; // for storing distance in objects in meter 
+    double F; // for storing force in Newton 
+
+    cout << "Enter mass of object 1 in kgs : "; 
+    cin >> m1; 
+
+    cout << "Enter mass of object  2 in kgs : "; 
+    cin >> m2; 
+
+    cout << "Enter distance between objects in meters : "; 
+    cin >> r; 
+
+    if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+    {
+        cout << "invalid values for mass and/or distance" << endl; 
+        return (-1); 
+    }
+
+    F = (G * m1 * m2) / (r * r); 
+
+    cout << "Gravitational force = " << F << " Newton" << endl; 
+
+    return (0); 
+}
+
+#include  <iostream> 
+int main(void) 
+{
+    cout << "Hello world!" << endl; 
+    return (0); 
+}
+
+#include <iostream> 
+int main(void) 
+{
+    cout << "Hello CPP !" << endl; 
+    return (0); 
+}
+
+#include <iostream> 
+int main(void) 
+{
+    cout << "hello cpp, I am in" << endl; 
+    return (0); 
+}
+
+#include <iostream> 
+int main(void) 
+{
+    cout << "Hello world!" << endl; 
+    return (0); 
+}
+
+#include <iostream> 
+int main(void) 
+{
+    cout << "Hello World!" << endl; 
+    return (0); 
+}
+
+#include <iostream> 
+int main(void) 
+{
+    cout << "Hello World!" << endl; 
+    return 0; 
+}
+
+#include <iostream> 
+int main(void) 
+{
+    cout << "Hello World!" << endl; 
+    return 0; 
+} 
+
+#include <iostream> 
+int main(void) 
+{
+    cout << "Hello World!" << endl; 
+    return 0; 
+}
+
+// StaGE 3 : USING USER DEFINED DATA type 
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <math.h> 
+
+// definition of structure MassAndDistance capturing mass and distance 
+// data of objects 
+struct MassAndDistace 
+{
+    double m1; 
+    double m2; 
+    double r; 
+}; 
+
+// function declaration
+double ComputeGravitational(struct MassAndDistance* pData); 
+
+int main(void) 
+{
+    // variables
+    struct MassAndDistance Earthsun; 
+    struct MassAndDistance JupitorSun; 
+    double ForceBetweenEarthAndSun; 
+    double ForceBetweenJupitorAndSun; 
+
+    // code 
+    Earthsun.m1 = 1.9198e30; 
+    EarthSun.m2 = 9.9722e24; 
+    EarthSun.r = 149597871000; 
+
+    ForceBetweenEarthAndSun = ComputeGravitational(&EarthSun); 
+    printf("Gravitational force between earth and sun = %lf Newton", ForceBetweenEarthAndSun); 
+
+    Jupitorsun.m1 = 1.9891e30; 
+    JupitorSun.m2 = 1.89813e27; 
+    JupitorSun.r = 149597871000; 
+
+    ForceBetweenJupitorAndSun = ComputeGravitational(&JupitorSun); 
+    printf("Gravitational force between Jupitor and Sun = %lf Newton", ForceBetweenJupitorAndSun); 
+
+    return (0); 
+}
+
+void ComputeGravitational(struct MassAndDistance* pData) 
+{
+    // variable declarations 
+    double G = 6.67 * 10e-11; .. universal constant of gravitation 
+    double F; // for storing amount of force in Newton 
+
+    // code 
+    if(pData->m1 <= 0.0 || pData->m2 <= 0.0 || pData->r <= 0.0) 
+        return (NAN); 
+
+    F = (G  * pData->m1 * pData->m2) / (pData->r * pData->r); 
+    return (F); 
+}
+
+#include <stdio.h> 
+#include <math.h> 
+
+// defining structure MassAndDistance for storing Mass and Distance data of objects. 
+struct MassAndDistance 
+{
+    double m1; 
+    double m2; 
+    double r; 
+}; 
+
+// function declaration 
+double ComputeGravitational(struct Date* pData); 
+
+int main(void) 
+{
+    // variable declarations 
+    struct MassAndDistance EarthSun; 
+    struct MassAndDistance JupitorSun; 
+    double ForceBetweenEarthAndSun; 
+    double ForceBetweenJupitorAndSun; 
+
+    // code 
+    EarthSun.m1 = 1.9198e30; 
+    EarthSun.m2 = 5.9722e24; 
+    EarthSun.r = 149597871000; 
+
+    ForceBetweenEarthAndSun = ComputeGravitational(&EarthSun); 
+    printf("Gravitational force between the Earth and the sun = %lf Newtin\n", ForceBetweenEarthAndSun); 
+
+    JupitorSun.m1 = 1.9198e30; 
+    JupitorSun.m2 = 1.89813e27; 
+    JupitorSun.r = 760070000000; 
+
+    ForceBetweenJupitorAndSun = ComputeGravitational(&JupitorSun); 
+    printf("Gravitational force between the Jupitor and the Sun is = %lf Newton\n", ForceBetweenJupitorAndSun); 
+}
+
+double ComputeGravitational(struct Data* pData) 
+{
+    // variable declaration 
+    double G = 6.67 * 10e-11; // universal gravitational constant 
+    double F; // for storing force in Newton 
+
+    if(pData->m1 <= 0.0 || pData->m2 <= 0.0 || pData->m3 <= 0.0) 
+        return (NAN); 
+
+    F = (G * pData->m1 * pData->m2) / (pData->r * pData* r); 
+    return (F); 
+}
+
+#include <iostream> 
+#include <exception> 
+#include <cmath> 
+
+// class definitiom 
+class MassAndDistance 
+{
+    private: 
+        double m1, m2, r; 
+    public: 
+        MassAndDistance(double _m1, double _m2, double _r) 
+        {
+            if(_m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+                throw std::domain_error("Bad input values"); 
+            
+            m1 = _m1; 
+            m2 = _m2; 
+            r = _r; 
+        }
+
+        double ComputeGravitational() const 
+        {
+            // variable declarations  
+            double G = 6.67 * 10e-11; 
+            double F; 
+
+            // code  
+            F = (this->m1 * this->m2) / (this->r * this->r); 
+            return (F); 
+        }
+}; 
+
+int main(void) 
+{
+    // variable declarations 
+    MassAndDistance EarthSun(1.9198e30, 5.9722e24, 149597871000); 
+    MassAndDistance JupitorSun(1.9198e30, 1.89813e27, 76007000000); 
+    double ForceBetweenEarthAndSun; 
+    double ForceBetweenJupitorAndSun; 
+
+    std::cout << "Force Between the Earth and the sun = " 
+                << ForceBetweenEarthAndSun << " Newton" << endl; 
+    std::cout << "Force between the Jupitor and the Sun = " 
+                << ForceBetweenJupitorAndSun << " Newton" << endl; 
+    
+    return 0; 
+} 
+
+#include <iostream> 
+#include <exception> 
+#include <cmath> 
+
+// class definition 
+class MassAndDistance 
+{
+    private: 
+        double m1; 
+        double m2; 
+        double r; 
+    public:     
+        MassAndDistance(double _m1, double _m2, double _r) 
+        {
+            if(_m1 <= 0.0 || _m2 <= 0.0 || _r <= 0.0)
+                throw std::domain_error("Invalid input values"); 
+
+            this->m1 = _m1; 
+            this->m2 = _m2; 
+            this->r = _r; 
+        }
+
+        double ComputeGravitational(MassAndDistance* pData) 
+        {
+            // variable declarations 
+            double G = 6.67 * 10e-11; 
+            double F; 
+
+            // code 
+            F = (G * this->m1 * this->m2) / (this->r * this->r); 
+            return F; 
+        }
+}; 
+
+int main(void) 
+{
+    // variable declarations 
+    MassAndDistance EarthSun(1.9198e30, 5.9722e24, 149597871000); 
+    MassAndDistance JupitorSun(1.9198e30, 1.8981e27, 76007000000); 
+    double ForceBetweenEarthAndSun; 
+    double ForceBetweenJupitorAndSun; 
+
+    // code 
+    ForceBetweenEarthAndSun = EarthSun.ComputeGravitational(&EarthSun); 
+    ForceBetweenJupitorAndSun = JupitorSun.ComputeGravitational(&JupitorSun); 
+
+    cout << "Force between the earth and the sun = " 
+            << ForceBetweenEarthAndSun << " Newtin" << endl; 
+    cout << "Force between the Jupitor and the sun = " 
+            << ForceBetweenJupitorAndSun << " Newton" << endl; 
+    
+    return 0; 
+}
+
+// header file inclusion 
+#include <stdio.h> 
+#include <stdlib.h> 
+
+// structure definition 
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+// function declarations 
+struct Date* createDateInstance(int _day, int _month, int _year); 
+int getDay(struct Date* pDate); 
+int getMonth(struct Date* pDate); 
+int getYear(struct Date* pDate); 
+void setDay(struct Date* pDate, int newDay); 
+void setMonth(struct Date* pDate, int newMonth); 
+void setYear(struct Date* pDate, int newYear); 
+void showDate(struct Date* pDate); 
+void releaseDateInstance(struct Date* pDate); 
+
+// entry-point function 
+int main(void) 
+{
+    return (0); 
+}
+
+struct Date* createDateInstance(int _day, int _month, int _year) 
+{
+    struct Date* newDate; 
+
+    newDate= (struct Date*)malloc(sizeof(struct Date)); 
+    if(newDate == NULL) 
+    {
+        fprintf(stderr, "Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    pDate->day = _day; 
+    pDate->month = _month; 
+    pDate->year = _year; 
+
+    return (pDate); 
+}
+
+int getDay(struct Date* pDate) { return pDate->day; }
+int getMonth(struct Date* pDate) { return pDate->month; }
+int getYear(struct Date* pDate) { return pDate->year; }
+void setDay(struct Date* pDate, int newDate) {
+    pDate->day = newDay; 
+}
+
+void setMonth(struct Date* pDate, int newMonth) {
+    pDate->month = newMonth; 
+}
+
+void setYear(struct Date* pDate, int newYear) {
+    pDate->year = newYear; 
+}
+
+void showDate(struct Date* pDate) {
+    printf("%d/%d/%d\n", pDate->day, pDate->month, pDate->year); 
+}
+
+void releaseDateInstance(sruct Date* pDate) {
+    free(pDate); 
+}
+
+#include <iostream> 
+
+// COMPANY: OBJECt 
+struct MassAndDistance_1 
+{
+    double m1; 
+    double m2; 
+    double r; 
+}; 
+
+// COMPANy : product 
+class MassAndDistance_2 
+{
+    double m1; 
+    double m2; 
+    double r; 
+}
+
+int main(void) 
+{
+    using std::cout; 
+    using std::endl; 
+    
+    struct MassAndDistance_1 X1; 
+    MassAndDistance_2 X2; 
+
+    // CLIENT Accessing the internal member of the product he/she has brought 
+    X1.m1 = 10.0; 
+    X1.m2 = 20.0; 
+    X1.r = 30.0; 
+
+    X2.m1 = 1.1; // member not accessible 
+    X2.m2 = 2.2; // member inaccessible 
+    X2.r = 3.3; // member inaccessible 
+
+    return 0; 
+}
+
+#include <iostream> 
+
+// COMPANY 1 : PRODUCT 
+struct MassAndDistance_1
+{
+    double m1; 
+    double m2; 
+    double r; 
+}; 
+
+class MassAndDistance_2 
+{
+    double m1; 
+    double m2; 
+    double r; 
+}; 
+
+int main(void) 
+{
+    using std::cout; 
+    using std::endl; 
+
+    struct MassAndDistance_1 X1; 
+    MassAndDistance_2 X2; 
+
+    X1.m1 = 10.0; 
+    X1.m2 = 20.0; 
+    X1.r = 30.0; 
+
+    X2.m1 = 1.1; 
+    X2.m2 = 2.2; 
+    X2.r = 3.3; 
+
+    return 0; 
+}
+
+#include <iostream> 
+
+class Test 
+{
+    int a; 
+    int b; 
+    int c; 
+    int d; 
+    int e; 
+}; 
+
+int main(void)  
+{
+    Test t; 
+
+    t.a = 10; 
+    t.b = 20; 
+    t.c = 30; 
+    t.d = 40; 
+    t.e = 50; 
+
+    return 0; 
+}
+
+#include <stdio.h> 
+
+struct Test 
+{
+    int a; 
+    char b; 
+    float c; 
+}; 
+
+void test_1(void); 
+struct Test g_test_1; 
+
+int main(void) 
+{
+    test_1(); 
+    printf("g_tes_1.a = %d, g_test_1.b = %c, g_Test_1.c = %f\n", 
+                g_test_1.a, g_test_1.b, g_test_1.c); 
+    
+    return (0); 
+}
+
+void test_1(void) 
+{
+    struct Test t1; 
+
+    g_test_1.a = 100; 
+    g_test_1.b = 'A'; 
+    g_test_1.c = 1.1f; 
+
+    t1.a = 200; 
+    t1.b = 'B'; 
+    t1.c = 6.38f; 
+
+    printf("t1. = %d, t1.b = %c, t1.c = %f\n", t1.a, t1.b, t1.c); 
+}
+
+#include <iostream> 
+
+using std::cout; 
+
+class Test 
+{
+    int a; 
+    char b; 
+    float c; 
+}; 
+
+Test g_test_1; 
+
+void test_1(void); 
+
+int main(void) 
+{
+    test_1(); 
+    return 0; 
+}
+
+void test_1(void) 
+{
+    Test t1; 
+
+    g_test_1.a = 100;   // inaccessible 
+    g_test_1.b = 'A';   // inaccessible 
+    g_test_1.c = 1.1f;  // inaccessible 
+
+    t1.a = 200; // CTE  
+    t1.b = 'B'; // CTE
+    t1.c = 6.38f; // CTE 
+}
+
+#include <iostream> 
+
+using std::cout; 
+
+class Test 
+{
+    private: 
+        int a; 
+    public:    
+        char b; 
+        float c; 
+}; 
+
+Test g_test_1; 
+void test_1(void); 
+
+int main(void) 
+{
+    test_1(); 
+    return 0; 
+}
+
+void test_1(void) 
+{
+    Test t1; 
+
+    g_test_1.a = 100; // error  
+    g_test_1.b = 'B'; // ok 
+    g_test_1.c = 1.1f; // ok 
+
+    t1.a = 200; // error 
+    t1.b = 'B'; // ok 
+    t1.c = 3.3; // ok 
+}
+
+#include <iostream> 
+
+struct Date 
+{
+    int day;    // data definition statment : allowed 
+    int month;  // data definition statment : allowed 
+    int year;   // data definition statment : allowed 
+
+    // function definition statment : NOT allowed
+    int get_day()
+    {
+        return (day); 
+    }
+}
+
+#include <iostream> 
+
+using std::cout; 
+
+// stand alone function / global function / C like function 
+int Compute(int x, int y); 
+
+class Date 
+{
+    public: 
+        int day; 
+        int month; 
+        int year; 
+
+        void show() 
+        {
+            cout << day << "/" << month << "/" << year << endl; 
+        }
+
+        void show(date* pDate) 
+        {
+            cout << pDate->day << '/' << pDate->month << "/" << pDate->year << endl; 
+        }
+
+        // Every function written inside class date exist to process object of class date 
+        // Every such function must accept address of date object
+            // to undeerstand which object to be processed in current call 
+}; 
+
+class C 
+{
+    public: 
+        void f(C* pC, /* optional other params */)
+        { }
+
+        void f()  // 'C* this' is automatically added  
+        {} 
+}; 
+
+int main(void) 
+{
+    int result; 
+
+    result = Compute(10, 5); 
+
+    Date myBirthDate; 
+    myBirthDate.day = 10; 
+    myBirthDate.month = 7; 
+    myBirthDate.year = 1986; 
+
+    Date::show(&myBirthDate); 
+}
+
+int compute(int x, int y) 
+{
+    return (x+y) * (x-y); 
+}
+
+class Date 
+{
+    public: 
+        int day; 
+        int month; 
+        int year; 
+
+        void show() 
+        {
+            cout << this->day << "/" << this->month << "/" << this->year << endl; 
+        }
+}; 
+
+int main(void) 
+{
+    Date myBirthDate; 
+
+    myBirthDate.day = 20; 
+    myBirthDate.show(); 
+}
+
+#include <iostream> 
+
+using std::cout; 
+using std::endl; 
+
+class Date 
+{
+    public: 
+        int day; 
+        int month; 
+        int year; 
+
+        void show() 
+        {
+            cout << "**** Enter Date::show() ****" << endl; 
+            cout << "Address of date object used for making current call = " << this << endl; 
+            cout << this->day << "/" << this->month << "/" << this->year << endl; 
+            cout << "**** LEAVE Date::show() ****" << endl; 
+        }
+}; 
+
+int main(void) 
+{
+    // defining three local variables of Date 
+    Date d1; 
+    Date d2; 
+    Date d3; 
+
+    // define three pointers to class date 
+    Date* pDate1 = 0; // pDate1 is a pointer to class Date 
+    Date* pDate2 = 0; // pDate2 is a pointer to class Date 
+    Date* pDate3 = 0; // pDate3 is a pointer to class Date 
+
+    // set pointers to addresses 
+    pDate1 = &d1; 
+    pDate2 = &d2; 
+    pDate3 = &d3; 
+
+    // setting day, month, year of d1 
+    pDate1->day = 10; 
+    pDate1->month = 1; 
+    pDate1->year = 2035; 
+
+    // setting day month yeat of d2 
+    pDate2->day = 1; 
+    pDate2->month = 1; 
+    pDate2->year = 1976; 
+
+    // setting day month year of d3 
+    pDate3->day = 1; 
+    pDate3->month = 2; 
+    pDate3->year = 2015; 
+
+    cout << "main() : making use of pointer to call Date::show()" << endl; 
+    cout << "main(): address of d1 : " << pDate1 << endl; 
+    pDate1->show(); 
+
+    cout << "main() : making use of pointer to call Date::show()" << endl; 
+    cout << "main() : address of d2 : " << pDate2 << endl; 
+    pDate2->show(); 
+
+    cout << "main() : making use of pointer to call Date::show() " << endl; 
+    cout << "main() : address of d3 : " << pDate3 << endl; 
+    pDate3->show(); 
+
+    return 0; 
+}
+
+#include <iostream> 
+
+using std::cout; 
+using std::endl; 
+
+class Date 
+{
+    public: 
+        int day; 
+        int month; 
+        int year; 
+
+        void show() 
+        {
+            cout << "***** Enter Date::Show() *****" << endl; 
+            cout << "Address og object used for making the current call " << this << endl; 
+            cout << this->day << "/" << this->month << "/" << this->year << endl; 
+            cout << "***** LEAVE Date::show() *****" << endl; 
+        }
+}; 
+
+int main(void) 
+{
+    Date d1; 
+    Date d2; 
+    Date d3; 
+
+    // setting day month year of d1 
+    d1.day = 2; 
+    d1.month = 2; 
+    d1.year = 2025; 
+
+    // setting day month year of d2 
+    d2.day = 1; 
+    d2.month = 1; 
+    d2.year = 1970; 
+
+    //  setting day month year of d3 
+    d3.day = 24; 
+    d3.month = 3; 
+    d3.year = 2032; 
+
+    cout << "main() : Making use of object d1 to call Date::show() " << endl; 
+    cout << "main() : address of obect d1 = " << &d1 << endl; 
+    d1.show(); 
+
+    cout << endl; 
+    cout << "main() : naking use of object d2 to call Date::show() " << endl; 
+    cout << "main() : address of object d2 = " << &d2 << endl; 
+    d2.show(); 
+
+    cout << endl; 
+    cout << "main() : making use of object d3 to call Date::show() " << endl; 
+    cout << "main() : address of object d3 : " << &d3 << endl; 
+    d3.show(); 
+
+    return 0; 
+}
+
+#include <stdio.h> 
+
+// server side start 
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+void show(struct Date* pDate); 
+{
+    printf("%d-%d-%d\n", pDate->day, pDate->month, pDate->year); 
+}
+// SERVER SIDE END 
+
+// CLIENT SIDE START 
+int main(void) 
+{
+    struct Date myDate = {8, 2, 2025}; 
+
+    show(&myDate); 
+    return (0); 
+}
+// CLIENT SIZE END 
+
+class class class class throw this throw theow throe throw throw throw throw throw throuw throw throw throw throw 
