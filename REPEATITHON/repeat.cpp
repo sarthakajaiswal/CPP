@@ -4994,3 +4994,1086 @@ int main(void)
 // CLIENT SIZE END 
 
 class class class class throw this throw theow throe throw throw throw throw throw throuw throw throw throw throw 
+====================================================== 10 MARCH 2025 ====================================================================================================================================================================================================
+thrie throw throw theow throw throw throw throw throw thorow thorow throw throw throw throw throw theow thr;owthroe throw thrpw throw throw throw throw throw throw throw throw throw throw throw throw throw throwt thwor throw throw throw throw thwo 
+#include <iostream> 
+usng std::endl; 
+using std::endl; 
+
+// NAMEsPACE : it is  block for creating names 
+// inside namespace x we can define folloeing names : 
+// num, test, Date, xyz_t, Y 
+namespace X {
+    // data definition statiments 
+    int num; 
+
+    // function name statments 
+    void test() 
+    {
+        cout << "Hello world!!!" << endl; 
+    }
+
+    // class 
+    class Date 
+    {
+        private: 
+            int day, month, year; 
+        public: 
+            Date() 
+            {
+                this->day = 1; 
+                month = 1; 
+                year = 1; 
+            }
+
+            void show() 
+            {
+                cout << day << "/" << month << "/" << year << endl; 
+            }
+    }; 
+
+    // typedef 
+    typedef int xyz_t; 
+
+    // namespace 
+    namespace Y 
+    {
+        int z; 
+    }
+}
+
+class Test { 
+public: 
+    int num; // data member 
+    static int snum; // static data member 
+
+    // member function 
+    void test_function(void) 
+    {
+        cout << "Inside Test::test()" << endl; 
+    }
+
+    // static member function 
+    static void stest_function() 
+    {
+        cout << "Inside static test()" << endl; 
+    }
+
+    // typedef 
+    typedef int data_t; 
+
+    // class 
+    class M {
+        private: 
+            int p, q, r; 
+    }; 
+}; 
+
+
+// definiton of static variable snum inside class test 
+int Test::snum = 100; 
+
+void namespace_demo(void); 
+void class_demo(void); 
+
+int main(void) 
+{
+    namespace_demo(); 
+    class_demo(); 
+    return (0); 
+}
+
+void namespace_demo(void) 
+{
+    X::num; 
+    X::test(); 
+    X::Date day; 
+    X::xyz_t num; 
+    X::Y::p = 100; 
+}
+
+void class_demo(void) 
+{
+    Test::num; // not allowed 
+    Test::test_function(); // not allowed 
+    Test::snum = 500; // ok 
+    Test::stest_function(); // ok 
+    Test::pqr_t myNum = 600; // ok 
+    Test::PQR myObject; // ok 
+}
+
+// X::Y 
+1) if X is a namespace  then Y is : 
+    .data variable .function name .typedef .nmesoace name .class 
+2) if Y is a class 
+    1) typedef name 2) static data member 3) static member function
+    4) nested class 
+    Y is available as per public-private rule 
+
+#include <iostream> 
+
+using std::endl; 
+using std::cout; 
+
+class Test 
+{
+    public: 
+        int num;    // data variable name  
+        static int snum;    // static data variable name 
+
+        void test() 
+        {
+            cout << "in Date::test()" << endl; 
+        } 
+
+        static void stest_function() 
+        {
+            cout << "inside Test::stest_function()" << endl; 
+        }
+
+        typedef xyz_t; 
+
+        class M {
+            int p, q, r; 
+        }
+}; 
+
+int Test::snum = 100; // definition of static variable snum inside class test 
+
+namespace X {
+    // data definition inside namespace 
+    int num; 
+
+    // function name inside namespacce 
+    void test_func(void) 
+    {
+        cout << "Inside X::test_func()" << endl; 
+    }
+
+    // typedef inside namespace 
+    typedef int xyz_t; 
+
+    // class name inside namespace 
+    class PQR {
+        private: 
+            int p, q, r; 
+    }; 
+
+    // namespace inside namespace 
+    namespace Y {
+        int num; 
+    }
+}
+
+void namespace_demo(void); 
+void class_demo(void); 
+
+int main(void) 
+{
+    namespace_demo(); 
+    class_demo(); 
+    return 0; 
+}
+
+void namespace_demo(void) 
+{
+    X::num = 10; // ok 
+    X::test_fun(); // ok 
+    X::xyz_t num; // ok 
+    X::PQR myObj; 
+    X::Y::num = 10; // ok 
+}
+
+void class_demo(void) 
+{
+    Test::num; 
+    Test::snum = 10; 
+    Test::stest_func(); 
+    Test::pqr_t vqr; 
+    Test::PQR myObj; 
+} 
+
+// X::Y 
+X is a namespace then 
+Y can be - 1) data variable name 2) function name 3) typedef 
+            4) namespace 5) class 
+if X is a class then
+Y can be - 1) static data member 2) static function member 
+            3) typedef 4) nested class 
+            Y is available as per public-private rule 
+
+void test_func_1() 
+{
+    outer_loop : 
+    for(int j = 0; j < 10; ++j) 
+    {
+        if(condition) 
+            goto outer_loop; // highly undesirable unil writting very low level software 
+    }
+}
+
+void test_func_1() 
+{
+    outer_loop: 
+    for(int i = 0; i < 10; ++i) 
+    {
+        if(ccondition) 
+            goto outer_loop; // highly undesirable until writting very low level software 
+    }
+}
+
+#include <iostream> 
+#include <string> 
+
+using std::cout; 
+using std::endl; 
+using std::string; 
+
+int main(void) 
+{
+    string s2("ABCDE"); 
+    string::iterator iter = s2.begin(); 
+
+    cout << "*iter = " << *iter << endl; // *iter = 'A' 
+    
+    iter++; // advance internal current pointer to next char 
+    cout << "*iter = " << *iter << endl; // *iter = 'B' 
+
+    ++iter; // advance internal current pointer to nect char 
+    cout << "*iter = " << *iter << endl; // *iter = 'C' 
+
+    iter = iter+1; // advance internal current pointer to next char 
+    cout << "*iter = " << *iter << endl; // *iter = 'D' 
+
+    while(iter != s2.end()) 
+    {
+        cout << "*iter = " << *iter << endl; 
+        ++iter; 
+    }
+
+    return (0); 
+}
+
+#include <iostream> 
+#Include <string> 
+
+using std::endl; 
+using std::cout; 
+using std::string; 
+
+int main(void) 
+{
+    string s2("HELLO");
+    string::iterator iter = s2.begin(); 
+
+    cout << "*iter = " << *iter << endl; // *iter = 'H' 
+
+    iter++; 
+    cout << "*iter = " << *iter << endl; // *iter = 'E' 
+
+    ++iter; 
+    cout << "*iter = " << *iter << endl; 
+
+    iter = iter + 1; 
+    cout << "*iter = " << *iter << endl; 
+
+    iter = s2.begin(); 
+    while(iter != s2.end())
+    {
+        cout << "*iter = " << *iter << endl; 
+        ++iter; 
+    }
+
+    return 0; 
+}
+
+#include <iostream> 
+#include <string> 
+
+using std::cout; 
+using std::endl; 
+using std::string; 
+
+void string_iterator_demo(void); 
+
+int main(void) 
+{
+    string_iterator_demo(); 
+    return 0; 
+}
+
+void string_iterator_demo(void) 
+{
+    string s("HELLO"); 
+
+    // 1 : using iterator and while loop 
+    cout << "Repeat 1 : " << endl; 
+    string::iterator my_iter = s.begin(); 
+    while(my_iter != s.end()) 
+    {
+        cout << "Current char : " << *my_iter << endl; 
+        ++my_iter; // pre-increment 
+    }
+
+    // 2 : using iterator and while loop 
+    string::iterator iter_2 = s.begin(); 
+    while(iter_2 != s.end()) 
+    {
+        cout << "current char : " << *iter_2 << endl; 
+        iter_2++; // post increment  
+    }
+
+    // 3 : using iterator and while loop 
+    string::iterator iter_3 = s.begin(); 
+    while(iter_3 != s.end()) 
+    {
+        cout << "*iter_3 = " << *iter_3 << endl; 
+    }
+
+    string s2("CoreCode Programming Academy"); 
+    
+    // 1: using iterator and for loop  
+    for(string::iterator iter_1 = s2.begin(); iter_1 != s2.end(); ++iter_1) 
+    {
+        cout << "*iter_1 = " << *iter_1 << endl; 
+    }
+
+    // 2: using iterator and for loop 
+    for(string::iterator iter_2 = s2.begin(); iter_2 != s2.end(); iter_2++) 
+    {
+        cout << "*iter_2 = " << *iter_2 << endl; 
+    }
+
+    // 3: using iterator and for loop 
+    for(string::iterator iterOfString = s2.begin(); iterOfString != s2.end(); iterOfString = iterOfString+1) 
+    {
+        cout << "*iterOfString = " << *iterOfString << endl; 
+    }
+}
+
+#include <iostream> 
+#include <string> 
+
+using std::cout; 
+using std::endl; 
+using std::string; 
+
+void string_iterator_demo(void); 
+
+int main(void) 
+{
+    string_iterator_demo(); 
+    return 0; 
+}
+
+void string_iterator_demo(void) 
+{
+    string s("Hello World!!!"); 
+
+    // 1 : using iterator and while loop 
+    cout << "Repeat 1 : " << endl; 
+    string::iterator my_iter = s.begin(); 
+    while(my_iter != s.end())
+    {
+        cout << "current char = " << *my_iter << endl; 
+        ++my_iter; // pre-increment 
+    }
+
+    // 2 : using iterator and while loop 
+    string::iterator iter_1 = s.begin(); 
+    while(iter_1 != iter_1.end()) 
+    {
+        cout << "Current char : " << *iter_1 << endl; 
+        iter_1++; // post-increment 
+    }
+
+    // 3 : using iterator and while loop 
+    string::iterator iter_of_s = s.begin(); 
+    while(iter_of_s != s.end()) 
+    {
+        cout << "*iter_of_s = " << *iter_of_s << endl; 
+        iter_of_s = iter_of_s + 1; 
+    }
+
+    // 1 : for lopp 
+    cout << "Repeat 1 using for loop " << endl; 
+    for(string::iterator iter_2 = s.begin(); iter_2 != s.end(); ++iter_2) 
+    {
+        cout << "*iter_2 = " << *iter_2 << endl; 
+    }
+    // iter_2 not avaialable here 
+
+    // 2: using for loop and iterator 
+    cout << "Repeat 2 : using for loop and iterator" << endl; 
+    for(string::iterator iterOfString = s.begin(); iterOfString != s.end(); iterOfString++) 
+    {
+        cout << "*iterOfString = " << *iterOfString << endl; 
+    }
+
+    // 3 : using for loop and iterator 
+    cout << "Repea 3 using for loop : " << endl; 
+    string strNameOfAcademy("CoreCode Programming Academy"); 
+    for(
+        string::iterator iterStr = strNameOfAcademy.begin(); 
+        iterStr != strNameOfAcademy.end(); 
+        ++iterStr   
+    ) 
+        cout << "*iterStr = " << *iterStr << endl; 
+}
+
+#include <stdio.h> 
+
+using std::cout; 
+using std::endl; 
+
+class Date 
+{
+    public: 
+        typedef int day_t; 
+        typedef int month_t; 
+        typedef int year_t; 
+    private: 
+        day_t day; 
+        month_t month; 
+        year_t year; 
+    public: 
+        Date(day_t day, month_t month, year_t year) 
+        {
+            day = init_day; 
+            month = init_month; 
+            year = init_year; 
+        }
+
+        day_t get_day() 
+        {
+            return day; 
+        }
+
+        month_t get_month() 
+        {
+            return month; 
+        }
+
+        year_t get_year() 
+        {
+            return year; 
+        }
+}; 
+
+int main(void) 
+{
+    Date myDate(15, 2, 2025); 
+    Date::day_t day = myDate.get_day(); // Date::get_day(&myDate); 
+    Date::month_t month = myDate.get_month(); // Date::get_month(&myDate); 
+    Date::year_t year = myDate.get_year(); // Date::get_year(&myDate) 
+
+    cout << day << "/" << month << "/" << year << endl; 
+
+    return 0; 
+}
+
+#include <iostream> 
+
+using std::cout; 
+using std::endl; 
+
+class Date {
+    public: 
+        typedef int day_t; 
+        typedef int month_t; 
+        typedef int year_t; 
+    private: 
+        int day, month, year; 
+    public: 
+        Date(day_t init_day, month_t month, year_t year) 
+        {
+            day = init_day; 
+            month = init_month; 
+            year = init_year; 
+        }
+
+        day_t get_day() 
+        {
+            return day; 
+        }
+
+        month_t get_month() 
+        {
+            return month; 
+        }
+
+        year_t get_year() 
+        {
+            return year; 
+        }
+}; 
+
+int main(void) 
+{
+    Date myDate(12, 12, 2012); 
+
+    day_t day = myDate.get_day; // Date::get_day(&myDate); 
+    month_t month = myDate.get_month(); // Date::get_month(&myDate); 
+    year_t year = myDate.get_year(); // Date::get_year(&myDate); 
+
+    cout << day << "/" << month << "/" << year << endl; 
+}
+
+#include <iostream> 
+#include <string> 
+
+using std::cout; 
+using std::endl; 
+using std::string; 
+
+void string_demo(void); 
+void vector_demo(void); 
+
+int main(void) 
+{
+    string_demo(); 
+    vector_demo(); 
+    return 0; 
+}
+
+void string_demo(void) 
+{
+    string s1; 
+    string s2("Hell0"); 
+    string s3(s2); 
+
+    cout << "STRING DEMO ENTER --------------------------" << endl; 
+    cout << "s1 : " << s1 << endl;  // empty 
+    cout << "s2 : " << s2 << endl; 
+    cout << "s3 : " << s3 << endl; 
+    cout << "addr(s2) : " << &s2 << endl; 
+    cout << "addr(s3) : " << &s3 << endl; 
+    cout << "Contents of s2 and s3 are same but addresses are not"  
+            << "this proves that s2 is a clone of s2" << endl; 
+
+    cout << "Show a string char by char : " << endl; 
+    cout << "METHOD 1 : index by index --------------------------" << endl; 
+
+    for(string::size_type i = 0; i != s2.size(); i++) 
+        cout << "s2[" i << "] = " << s2[i] << endl; 
+    cout << "METHOD 1 ENDS" << endl; 
+
+    cout << "METHOD 2 : Using iterator" << endl; 
+    for(string:iterator iter = s2.begin(); iter != s2.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+    cout << "METHOD 2 END " << endl; 
+    cout << "STRING_DEMO LEAVE -----------------------------------------------" << endl; 
+} 
+
+void vector_demo(void) 
+{} 
+
+#include <iostream> 
+#include <string> 
+
+using std::cout; 
+using std::endl; 
+using std::string; 
+
+void string_demo(void); 
+
+int main(void) 
+{
+    string_demo(); 
+    return 0; 
+}
+
+void string_demo(void) 
+{
+    string s1; 
+    string s2("Sarthak Jaiswal"); 
+    string s3(s2); 
+
+    cout << "---------------- STRING DEMO ENTER --------------" << endl; 
+    cout << "s1 : " << s1 << endl; 
+    cout << "s2 : " << s2 << endl; 
+    cout << "s3 : " << s3 << endl; 
+    cout << "addr(s2) : " << &s2 << endl; 
+    cout << "addr(s3) : " << &s3 << endl; 
+    cout << "Contents of s2 and s3 are same but addresses are not" 
+            << "this preoves that s3 is a clone of s2" << endl; 
+
+    cout << "Show a string char by char : " << endl; 
+    cout << "METHOD 1 : Using Index: " << endl; 
+
+    for(string::size_type i = 0; i != s2.size(); i++) 
+        cout << "s2[" << i << "] = " << s2[i] << endl; 
+    cout << "------------ METHOD 1 ENDS -----------------" << endl; 
+
+    cout << "METHOD 2: Using iterator" << endl; 
+    for(string::iterator iter = s2.begin(); iter != s2.end(); ++iter) 
+        cout << "*iter = " << *iter << endl; 
+    cout << "----------- METHOD 2 ENDS ------------" << endl; 
+    cout << "STRING DEMO LEAVE" << endl; 
+}
+
+#include <stdio.h> 
+
+using std::cout; 
+using std::endl; 
+
+int get_roll_number(); 
+double get_sal(); 
+char* get_addr(); 
+
+// good practise 
+typedef int roll_number_t; 
+typedef double salary_t;
+typedef char* addr_t; 
+
+void test_function(void); 
+
+int main(void) 
+{
+    int x;  // x is a roll number 
+    int y;  // y is a salary 
+    char* s;    // s is an address 
+    
+    // recommended practise 
+    int roll_number; 
+    double employee_salary; 
+    char* address_of_student; 
+
+    return 0; 
+}
+
+void test_function(void) 
+{
+    roll_number_t get_roll_numbet(void); 
+    salary_t get_salary(void); 
+    addr_t get_address(void); 
+    
+    roll_number_t roll_number; 
+    salary_t salary_of_employee; 
+    addr_t address_of_student; 
+
+    roll_number = get_roll_number(); 
+    salary_of_employee = get_salary(); 
+    address_of_student = get_address(); 
+}
+
+#include <stdio.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+int main(void) 
+{
+    int num = 10; 
+    printf("num = %d\n", num); // 10 will be printed 
+
+    struct Date myDate = {9, 2, 2025}; 
+    printf("%d-%d-%d\n", myDate.day, myDate.month, myDate.year); 
+    //  9, 2, 2025 will be printed 
+
+    return 0; 
+}
+
+#include <iostream> 
+
+using std::cout; 
+using std::endl; 
+
+class Date 
+{
+    private: 
+        int day; 
+        int month; 
+        int year; 
+    public: 
+        void init(int init_day, int init_month, int init_year) 
+        {
+            this->day = init_day; 
+            this->month = init_month; 
+            this->year = init_year; 
+        }
+
+        void show() 
+        {
+            cout << this->day << "/ " 
+                    << this->month << "/" 
+                    << this->year << endl; 
+        } 
+}; 
+
+int main(void) 
+{
+    int num = 100; 
+    cout << "num = " << num << endl; // 100 
+
+    Date myDate; // there is no way as of now to initialize an object 
+                 // we can add init() function to class 
+    myDate.init(9, 2, 2025); 
+
+    // add show() function 
+    myDate.show(); // 9, 2, 2025 
+
+    return 0; 
+}
+
+// At c++ syntax level 
+// allocate of memory to Date object is done by 
+// Date myDate 
+
+// setting value for the first time is done by 
+// myDate.init(9, 2, 2025) 
+
+// There are two separate steps and therefore do not come under category of initialization 
+// If we could so something like Date myDate(9, 2, 2025) 
+// then it would come under initialization 
+
+// Date myDate(9, 2, 2025) 
+// After reading this, C++ compiler should allocate block of memory for 
+// myDate object and INTERNALLY call Date::init(). 
+#include <iostream> 
+
+using std::cout; 
+using std::endl; 
+
+class Date 
+{
+    private: 
+        int day; 
+        int month; 
+        int year; 
+    public: 
+        // CONSTRUCTOR FUNCTION 
+        Date(int init_day, int init_month, int init_year) 
+        {
+            this->day = init_day; 
+            this->month = init_month; 
+            this->year = init_year; 
+        }
+
+        void show() 
+        {
+            cout << day << "/" << month << "/" << year << endl; 
+        }
+}; 
+
+int main(void) 
+{
+    Date myDate(9, 2, 2025); 
+    // 12 bytes of memory block will be allocated to Date object 
+    // Make call to Date::Date(addr_of_new_object, 9, 2, 2025) 
+    myDate.show(); // Date::show(&myDate); 
+
+    return 0; 
+}
+
+#include <iostream> 
+#include <cstdlib.h> 
+
+using std::cout; 
+using std::endl; 
+
+class MassAndDistance 
+{
+    private: 
+        double m1; 
+        double m2; 
+        double r; 
+    public: 
+        MassAndDistance(double _m1, double _m2, double _r) 
+        {
+            this->m1 = _m1; 
+            this->m2 = _m2; 
+            this->r = _r; 
+        }
+
+        double ComputeGravitational() 
+        {
+            double G = (6.67 * 10e-11); 
+            double F; 
+
+            if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+            {
+                cout << "Invalid values for mass and/or distance" << endl; 
+                cout << "Exitting the application..." << endl; 
+                exit(-1); 
+            }
+
+            F = (G * m1 * m2) / (r * r); 
+            return F; 
+        }
+}; 
+
+int main(void) 
+{
+    MassAndDistance sunEarth(1.9198e20, 5.9722e24, 149597871000); 
+
+    cout << "Gravitational force of attraction between the Sun and the Earth = " 
+            << sunEarth.computeGravitational() << endl; 
+
+    return 0; 
+}
+
+#include <iostream> 
+#include <cstdlib> 
+
+using std::endl; 
+using std::cout; 
+
+class MassAndDistance 
+{
+    private: 
+        double m1; 
+        double m2; 
+        double r; 
+
+    public: 
+        MassAndDistance(double _m1, double _m2, double _r) 
+        {
+            this->m1 = _m1; 
+            this->m2 = _m2; 
+            this->r = _r; 
+        }
+
+        double computeGravitational() 
+        {
+            double G = (6.67 * 10e-11); 
+            double F; 
+
+            if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+            {
+                cout << "Invalid values for mass and/or distance" << endl; 
+                cout << "Exitting the application..." << endl; 
+                exit(-1); 
+            }
+
+            F = (G * m1 * m2) / (r * r); 
+            return F; 
+        }
+}; 
+
+int main(void) 
+{
+    MassAndDistance sunEarth(1.9198e30, 5.9722e24, 149597871000); 
+
+    cout << "Gravitational force of attraction between the Sun and the Earth = "    
+            << sunEarth.computeGravitational() << endl; 
+
+    return 0; 
+}
+
+#include <iostream> 
+
+class Test 
+{
+    private: 
+        int a; 
+        char b; 
+        float c; 
+    public: 
+        int d; 
+        int e; 
+        int f; 
+}; 
+
+// Qualified access 
+// Test_object.a, Test_object.b, test_object.c 
+// Test_ptr->a, test_ptr->b, test_ptr->c 
+
+int main(void) 
+{
+    Test t1; 
+    Test t2; 
+
+    // CTE 
+    t1.a = 10; 
+    t1.b = 'b'; 
+    t1.c = 3.41; 
+
+    // ok 
+    t1.d = 100; 
+    t1.e = 200; 
+    t1.f = 300; 
+}
+
+#include <iostream> 
+using std::cout; 
+using std::endl; 
+class Date 
+{
+    int day; 
+    int month; 
+    int year; 
+
+    void show(Date* pDate) 
+    {
+        cout << pDate->day << "/" << pDate->month << "/" << pDate->year << endl; 
+    }
+}; 
+
+int main(void) 
+{
+    Date myDate; // day month year 
+    Date d1;        // day month year 
+
+    myDate.day = 8; 
+    myDate.month = 2; 
+    myDate.year = 2025; 
+
+    d1.day = 11; 
+    d1.month= 3; 
+    d1.year = 2026; 
+
+    Date::show(&myDate); 
+    Date::show(&d1); 
+}
+
+class C 
+{
+    public: 
+        // f() exist to algorithmically process an object of class C 
+        void f(void) 
+        {
+            // which object of class C will we process in current call of C::f()? 
+        }
+}; 
+
+class YourClassName 
+{
+    private: 
+        int a; 
+        char b; 
+        float c; 
+    public: 
+        // YourClassName* this : first formal parameter
+        void YourFunctionName(int m, int n) 
+        {
+            this->data_member; 
+            this->member_function; 
+
+            this->a 
+            this->b 
+            this->c 
+
+            m // direct access to formal parameters 
+            n // direct access to formal parameters 
+        }
+}; 
+
+int main(void) 
+{
+    YourClassName YourObjectName; 
+
+    YourClassName::YourFunctionName(&YourObjectName, 10, 20); 
+    
+    YourClassName.YourFunctionName(10, 20); 
+}
+
+#include <stdio.h> 
+
+// server side start 
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+void show(struct Date* pDate) 
+{
+    printf("%d-%d-%d\n", pDate->day, pDate->month, pDate->year) 
+}
+// server side end 
+
+// client side start 
+int main(void) 
+{
+    struct Date myDate = {8, 2, 2025}; 
+
+    show(&myDte); 
+    return (0); 
+}
+// client side end 
+
+#include <iostream> 
+
+using std::cout; 
+using std::endl; 
+
+// server side start 
+class Date 
+{
+    private: 
+        int day, month, year; 
+    public: 
+        void show() 
+        {
+            cout << this->day << "/" << this->month << "/" << this->year << endl; 
+        }
+}; 
+// server side end 
+
+// client side start 
+int main(void) 
+{
+    // day month and year of myDate will contain garbage values 
+    Date myDate; 
+
+    myDate.show(); // Date::show(&myDate) 
+
+    return (0); 
+}
+// client side end 
+
+// header file inclusion 
+#include <iostream> 
+
+// importing symbols 'cout' and 'endl' from standard namespace 
+using std::cout; 
+using std::endl; 
+
+// server-side start 
+class Date 
+{
+    private: 
+        // data layout definition 
+        int day;
+        int month; 
+        int year; 
+    public: 
+        // public member function 
+        // REMEMBER -> first parameter of init() function is Date* this 
+        void init(int init_day, int init_month, int init_year) 
+        {
+            this->day = init_day; 
+            this->month = init_month; 
+            this->year = init_year; 
+        }
+
+        // remeber -> first parameter of show() is Date* this 
+        void show() 
+        {
+            cout << this->day << "/" << this->month << "/" << this->year << endl; 
+        }
+}; 
+// server side end 
+
+// client side start 
+int main(void)
+{
+    // create an instance of class Date 
+    Date myDate; 
+
+    // use of object class Date 
+    cout << "myDate befire calling init() function on it" << endl; 
+    myDate.show(); // Date::show(&myDate); 
+    myDate.init(8, 2, 2025); 
+    cout << "myDate after calling init() function on it" << endl; 
+    myDate.show(); 
+
+    return 0; 
+}
+// client side end 
