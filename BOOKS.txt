@@ -1,0 +1,9 @@
+For learning memory management : 
+-> Session 20 = 1:14:00
+
+For books at sir: 
+Session20 => 1:14:00 to 1:35:00 
+
+. The design and implementation of os - the MINIX book 
+. The design of UNIX os 
+Linus Torwald used this two books to implement his own LINUX 
