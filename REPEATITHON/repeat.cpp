@@ -6076,3 +6076,1039 @@ int main(void)
 
     return 0; 
 }
+
+==================== 19 MARCH 2025 ===================================================================================================================
+#include <stdio.h> 
+#Include <stdlib.h> 
+
+void fill_array(int* p, size_t N); 
+void show_array(int* p, size_t N); 
+
+int main(void) 
+{
+    int* p_arr = NULL; 
+    size_t N = 0; 
+
+    p_arr = (int*)malloc(N * sizeof(int)); 
+    if(p_arr == NULL) 
+    {
+        puts("Error in allocating memory"); 
+        exit(EXIT_FAILURE); 
+    }
+
+    fill_array(p_arr, N); 
+    show_array(p_arr, N); 
+
+    free(p_arr); 
+    p_arr = NULL; 
+
+    return (0); 
+}
+
+void fill_array(int* p_arr, size_t N) 
+{
+    size_t i = 0; 
+
+    for(i = 0; i < N; ++i) 
+        *(p+i) = (i+1) * 100; 
+}
+
+void show_array(int* p_arr, size_t N) 
+{
+    size_t i; 
+
+    for(i = 0; i < N; ++i) 
+        printf("*(p + %d) = %d\n", i, *(p_arr+i)); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+void show_array(int* p, size_t N); 
+void fill_array(int* p, size_t N); 
+
+int main(void) 
+{
+    int* p_arr = NULL; 
+    size_t N = 3; 
+
+    p_arr = (int*)malloc(N * sizeof(int)); 
+    if(p_arr == NULL) 
+    {
+        printf("Error in allocating memory"); 
+        exit(EXIT_FAILURE); 
+    }
+
+    fill_array(p_arr, N); 
+    show_array(p_arr, N); 
+
+    free(p_arr);
+    p_arr = NULL; 
+
+    return (0); 
+}
+
+void show_array(int* p, size_t N)
+{
+    size_t i = 0; 
+
+    for(i = 0; i < N; ++i) 
+        printf("*(p+%d) = %d\n", i, *(p+i)); 
+}
+
+void fill_array(int* p, size_t N) 
+{
+    size_t i; 
+
+    for(i = 0; i < N; ++i) 
+        *(p+i) = (i+1) * 100; 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+int* get_array(int* pN); 
+
+int main(void) 
+{
+    int* p = 0; 
+    int N = -1; 
+    int i; 
+
+    p = get_array(&N); 
+
+    /* fill_array() */
+    for(i = 0; i < N; ++i) 
+        *(p + i) = (i + 1) * 100; 
+
+    /* show_array() */
+    for(i = 0; i < N; ++i) 
+        printf("*(p + %d) = %d\n", i, *(p+i)); 
+
+    free(p); 
+    p = NULL; 
+
+    return (0); 
+}
+
+int* get_array(int* pN) 
+{
+    int* p = NULL; 
+    int N; 
+
+    printf("Enter array size : "); 
+    scanf("%d", &N); 
+
+    if(N <= 0) 
+    {
+        puts("Array size must be positive"); 
+        exit(-1); 
+    }
+
+    p = (int*)malloc(N * sizeof(int)); 
+    if(p == NULL) 
+    {
+        puts("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    *pN = N; 
+    return (p); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+int* get_array(int* pN); 
+
+int main(void) 
+{
+    int* p_arr = NULL; 
+    int N = -1; 
+    int i; 
+
+    p_arr = get_array(&N); 
+
+    // fill_array() 
+    for(i = 0; i < N; ++i) 
+        *(p + i) = (i + 1) * 100; 
+
+    // show_array() 
+    for(i = 0; i < N; ++i) 
+        printf("*(p + %d) = %d\n", i, *(p + i)); 
+
+    free(p_arr);
+    p_arr = NULL; 
+
+    return (0); 
+}
+
+int* get_array(int* pN) 
+{
+    int* p_arr = NULL; 
+    int N; 
+
+    printf("Enter array size : "); 
+    scanf("%d", &N); 
+
+    if(N <= 0) 
+    {
+        printf("Array size must be positive "); 
+        exit (-1); 
+    }
+
+    p_arr = (int*)malloc(N * sizeof(int)); 
+    if(p_arr == NULL) 
+    {
+        puts("Error in allocating memory"); 
+        exit (-1); 
+    }
+
+    *pN = N; 
+    return (p_arr); 
+}
+
+#include <stdio.h> 
+#Include <stdlib.h> 
+
+void get_array(int** pp_arr, int* pN); 
+void fill_array(int* p_arr, int N); 
+void show_array(int* p_arr, int N); 
+void release_array(int** pp_arr); 
+
+int main(void) 
+{
+    int* p_arr = NULL; 
+    int N = -1; 
+
+    get_array(&p_arr, &N); 
+    fill_array(p_arr, N); 
+    show_array(p_arr, N); 
+    release_array(&p_arr); 
+
+    return (0); 
+}
+
+void get_array(int** pp_arr, int* pN) 
+{
+    int* p = NULL; 
+    int N = -1; 
+
+    printf("Enter size of array : "); 
+    scanf("%d", &N); 
+
+    if(N <= 0) 
+    {
+        printf("array size must be positive"); 
+        exit(-1); 
+    }
+
+    p = (int*)malloc(N * sizeof(int)); 
+    if(p == NULL) 
+    {
+        printf("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    *pp_arr = p; 
+    *pN = N; 
+}
+
+void fill_array(int* p_arr, int N) 
+{
+    int i; 
+
+    for(i = 0; i < N; ++i) 
+        *(p + i) = (i+1) * 100; 
+}
+
+void show_array(int* p_arr, int N) 
+{
+    int i; 
+
+    for(i = 0; i < N; ++i) 
+        printf("*(p + %d) = %d\n", i, *(p+i)); 
+}
+
+void release_array(int** pp_arr) 
+{
+    free(*pp_arr); 
+    *pp_arr = NULL; 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+void get_array(int** pp_arr, int* pN); 
+void fill_array(int* p, int N);
+void show_array(int* p, int N); 
+void release_array(int** pp_arr); 
+
+int main(void) 
+{
+    int* arr = NULL; 
+    int N = -1; 
+
+    get_array(&arr, &N); 
+    fill_array(arr, N); 
+    show_array(arr, N); 
+    release_array(&arr); 
+
+    return (0); 
+}
+
+void get_array(int** pp_arr, int* pN) 
+{
+    int* p = NULL; 
+    int N = -1; 
+
+    printf("Enter array size : "); 
+    scanf("%d", &N); 
+
+    p = (int*)malloc(N * sizeof(int)); 
+    if(p == NULL) 
+    {
+        printf("Error in allocating memory"); 
+        exit (-1); 
+    }
+
+    *pp_arr = p; 
+    *pN = N; 
+}
+
+void fill_array(int* p_arr, int N) 
+{
+    int i; 
+
+    for(i = 0; i < N; ++i) 
+        *(p + i) = (i + 1) * 100; 
+}
+
+void show_array(int* p_arr, int N) 
+{
+    int i; 
+
+    for(i = 0; i < N; ++i) 
+        printf("*(p = %d) = %d\n", i, *(p + i)); 
+}
+
+void release_array(int** pp_arr) 
+{
+    free(*pp_arr); 
+    *pp_arr = NULL; 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+// pDate is an IN parameter 
+void show_date(struct Date* pDate); 
+
+int main(void) 
+{
+    struct Date exam_date = {1, 2, 2023}; 
+    struct Date* p_result_date = 0; 
+
+    p_result_date = (struct Date*)malloc(sizeof(struct Daete)); 
+    if(p_result_date == NULL) 
+    {
+        puts("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    p_result_date->day = 30; 
+    p_result_date->month = 3; 
+    p_result_date->year = 2023; 
+
+    show_date(&exam_date); 
+    show_date(p_result_date); 
+
+    free(p_result_date); 
+    p_result_date = 0; 
+
+    return (0); 
+}
+
+void show_date(struct Date* pDate) 
+{
+    printf("%d/%d/%d\n", pDate->day, pDate->month, pDate->year); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+// pDate is an IN Parameter 
+void show_date(struct Date* pDate); 
+
+int main(void) 
+{
+    struct Date exam_date = {1, 2, 2023}; 
+    struct Date* result_date = NULL; 
+
+    p_result_date = (struct Date*)malloc(sizeof(struct Date)); 
+    if(p_result_date == NULL) 
+    {
+        printf("Error in allocating memory"); 
+        exit (-1); 
+    }
+
+    p_result_date->day = 30; 
+    p_result_date->month = 3; 
+    p_result_date->year = 2023; 
+
+    show_date(&exam_date); 
+    show_date(p_result_date); 
+
+    return (0); 
+}
+
+void show_date(struct Date* p_date) 
+{
+    printf("%d-%d-%d\n", p_date->day, p_date->month, p_date->year); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+// pDate is a IN parameter 
+void show_date(struct Date* pDate); 
+
+int main(void) 
+{
+    struct Date exam_date = {1, 2, 2023}; 
+    struct Date* result_date = NULL; 
+
+    result_date = (struct Date*)malloc(sizeof(struct Date)); 
+    if(result_date == NULL) 
+    {
+        puts("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    result_date->day = 1; 
+    result_date->month = 3; 
+    result_date->year = 2023; 
+
+    show_date(&exam_date); 
+    show_date(p_result_date); 
+
+    free(p_result_date); 
+    p_result_date = NULL; 
+
+    return (0); 
+}
+
+void show_date(struct Date* pDate) 
+{
+    printf("%d-%d-%d\n", pDate->day, pDate->month, pDate->year); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+void show_date(struct Date* pDate); 
+
+int main(void) 
+{
+    struct Date exam_date = {1, 2, 2023}; 
+    struct Date* result_date = NULL; 
+
+    result_date = (struct Date*)malloc(sizeof(struct Date)); 
+    if(result_date == NULL) 
+    {
+        printf("Error in allocating memory"); 
+        exit (-1); 
+    }
+
+    result_date->day = 1; 
+    result_date->month = 3; 
+    result_date->year = 2023; 
+
+    show_date(&exam_date); 
+    show_date(p_result_date); 
+
+    return (0); 
+}
+
+void show_date(struct Date* pDate) 
+{
+    printf("%d-%d-%d\n", pDate->day, pDate->month, pDate->year); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+void initialize_date(struct Date* pDate, int init_day, int init_month, int init_year); 
+void show_date(struct Date* pDate); 
+
+int main(void) 
+{
+    struct Date exam_date; 
+    struct Date* p_result_date = NULL; 
+
+    initialize_date(&exam_date, 1, 2, 2023); 
+    initialize_date(&result_date, 30, 3, 2023); 
+
+    show_date(&exam_date);
+    show_date(p_result_date); 
+
+    free(p_result_date); 
+    p_result_date = NULL; 
+
+    return (0); 
+}
+
+void initialize_date(struct Date* pDate, int init_day, int init_month, int init_year) 
+{
+    pDate->day = init_day; 
+    pDate->month = init_month; 
+    pDate->year = init_year; 
+}
+
+void show_date(struct Date* pDate) 
+{
+    printf("%d-%d-%d\n", pDate->day, pDate->month, pDate->year); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+void initialize_date(struct Date* pDate, int init_day, int init_month, int init_year); 
+void show_date(struct Date* pDate); 
+
+int main(void) 
+{
+    struct Date exam_date; 
+    struct Date* result_date; 
+
+    result_date = (struct Date*)malloc(sizeof(struct Date)); 
+    if(result_date == NULL) 
+    {
+        printf("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    initialize_date(&exam_date, 1, 3, 2023); 
+    initialize_date(p_result_date, 30, 3, 2023); 
+
+    show_date(&exam_date); 
+    show_date(p_result_date); 
+
+    free(p_result_date); 
+    p_result_date = NULL; 
+
+    return (0); 
+}
+
+void initialize_date(struct Date* pDate, int init_day, int init_month, int init_year) 
+{
+    pDate->day = init_day; 
+    pDate->month = init_month; 
+    pDate->year = init_year; 
+}
+
+void show_date(struct Date* pDate) 
+{
+    printf("%d/%d/%d\n", pDate->day, pDate->month, pDate->year); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+struct Date* get_date(void); 
+
+int main(void) 
+{
+    struct Date* pDate = NULL; 
+
+    pDate = get_date(); 
+    printf("%d-%d-%d\n", pDate->day, pDate->month, pDate->year); 
+    free(pDate); 
+    pDate = NULL; 
+
+    return (0); 
+}
+
+struct Date* get_date(void) 
+{
+    struct Date* pDate = NULL; 
+    int day, month, year; 
+
+    printf("Enter day : "); 
+    scanf("%d", &day); 
+
+    printf("Enter month : "); 
+    scanf("%d", &month); 
+
+    printf("Enter year : "); 
+    scanf("%d", &year); 
+
+    pDate = (struct Date*)malloc(sizeof(struct Date)); 
+    if(pDate == NULL) 
+    {
+        puts("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    pDate->day = day; 
+    pDate->month = month; 
+    pDate->year = year; 
+
+    return (pDate); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+struct Date* get_date(void); 
+
+int main(void) 
+{
+    struct Date* p = NULL; 
+
+    p = get_date(); 
+    printf("%d-%d-%d\n", pDate->day, pDate->month, pDate->year); 
+
+    free(p); 
+    p = NULL; 
+
+    return (0); 
+}
+
+struct Date* get_date(void) 
+{
+    struct Date* pDate = NULL; 
+    int day, month, year; 
+
+    printf("Enter day : "); 
+    scanf("%d", &day); 
+
+    printf("Enter month : "); 
+    scanf("%d", &month); 
+
+    printf("Enter year : "); 
+    scanf("%d", &year); 
+
+    pDate = (struct Date*)malloc(sizeof(struct Date)); 
+    if(pDate == NULL) 
+    {
+        printf("Error in allicating memory"); 
+        exit(-1); 
+    }
+
+    pDate->day = day; 
+    pDate->month = month; 
+    pDate->year = year; 
+
+    return (pDate); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+void get_date(struct Date** pp_date); 
+void show_date(struct Date* pDate); 
+void release_date(struct Date** pp_date); 
+
+int main(void) 
+{
+    struct Date* pDate = 0; 
+
+    get_date(&pDate); 
+    show(pDate); 
+    release_date(&pDate); 
+
+    return (0); 
+}
+
+void get_date(struct Date** ppDate) 
+{
+    struct Date* pDate = NULL; 
+    int day, month, year; 
+
+    printf("Enter day : "); 
+    scanf("%d", &day); 
+
+    printf("Enter month : "); 
+    scanf("%d", &month); 
+
+    printf("Enter year : " ); 
+    scanf("%d", &year); 
+
+    pDate = (struct Date*)malloc(sizeof(struct Date)); 
+    if(pDate == NULL) 
+    {
+        pDate->day = day; 
+        pDate->month = month; 
+        pDate->year = year; 
+    }
+
+    *ppDate = pDate; 
+}
+
+void show_date(struct Date* pDate) 
+{
+    printf("%d-%d-%d\n", pDate->day, pDate->month, pDate->year); 
+}
+
+void release_date(struct Date** ppDate) 
+{
+    free(*ppDate); 
+    *ppDate = NULL; 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+void get_date(struct Date** ppDate); 
+void show_date(struct Date* pDate); 
+void release_date(struct Date** ppDate); 
+
+int main(void) 
+{
+    struct Date* p = NULL; 
+
+    get_date(&p); 
+    show_date(p); 
+    release_date(&p); 
+
+    return (0); 
+}
+
+void get_date(struct Date** ppDate) 
+{
+    struct Date* pDate = NULL; 
+    int day, month, year; 
+
+    printf("Enter day : "); 
+    scanf("%d", &day); 
+
+    printf("Enter month : ");
+    scanf("%d", &month); 
+
+    printf("Enter year : "); 
+    scanf("%d", &year); 
+
+    pDate = (struct Date*)malloc(sizeof(struct Date)); 
+    if(pDate == NULL)
+    {
+        puts("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    pDate->day = day; 
+    pDate->month = month; 
+    pDate->year = year; 
+
+    *ppDate = pDate; 
+}
+
+void show_date(struct Date* pDate) 
+{
+    printf("%d-%d-%d\n", pDate->day, pDate->month, pDate->year); 
+}
+
+void release_date(struct Date** pDate) 
+{
+    free(*ppDate); 
+    *ppDate = NULL; 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+void get_date(struct Date** ppDate); 
+void show_date(struct Date* pDate); 
+void release_date(struct Date** ppDate); 
+
+int main(void) 
+{
+    struct Date* pDate = NULL; 
+
+    get_date(&pDate); 
+    show_date(pDate): 
+    release_date(&pDate); 
+
+    return (0); 
+}
+
+void get_date(struct Date* ppDate) 
+{
+    struct Date* pDate = NULL;
+    int day, month, year; 
+
+    printf("Enter day : "); 
+    scanf("%d", &day); 
+
+    printf("Enter month : "); 
+    scanf("%d", &month); 
+
+    printf("Enter year : "); 
+    scanf("%d", &year); 
+
+    pDate = (struct Date*)malloc(sizeof(struct Date)); 
+    if(pDate == NULL) 
+    {
+        printf("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    pDate->day = day; 
+    pDate->month = month; 
+    pDate->year = year; 
+
+    *ppDate = pDate; 
+}
+
+void show_date(struct Date* pDate) 
+{
+    printf("%d-%d-%d\n", pDate->day, pDate->month, pDate->year); 
+}
+
+void release_date(struct Date** ppDate) 
+{
+    free(*ppDate); 
+    *ppDate = NULL; 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+int main(void) 
+{
+    struct Date d_arr[5]; 
+    int i; 
+
+    for(i = 0; i < 5; ++i) 
+    {
+        d_arr[i].day = i+1; 
+        d_arr[i].month = 10-i; 
+        d_arr[i].year = 2020+i; 
+    }
+
+    for(i = 0; i < 5; ++i) 
+    {
+        printf("Date at index %d is %d-%d-%d\n", 
+                i, d_arr[i].day, d_arr[i].month, d_arr[i].year); 
+    }
+
+    return (0); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+int main(void) 
+{
+    struct Date d_arr[5]; 
+    int i; 
+
+    for(i = 0; i < 5; ++i) 
+    {
+        d_arr[i].day = i+1; 
+        d_arr[i].month = 10-i; 
+        d_arr[i].year = 2020+i; 
+    }
+
+    for(i = 0; i < 5; ++i) 
+    {
+        printf("Date at index %d is %d-%d-%d\n", 
+            i, pDate[i].day, pDate[i].month, pDate[i].year); 
+    }
+
+    return (0); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+void init_array(struct Date* pDate_att, size_t N); 
+void show_array(struct Date* pDate_arr, size_t N); 
+
+int main(void) 
+{
+    struct Date* pDate_arr = NULL; 
+    size_t N = 5; 
+
+    pDate_arr = (struct Date*)malloc(N * sizeof(struct Date)); 
+    if(pDate_arr == NULL) 
+    {
+        puts("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    init_array(pDate_arr, N); 
+    show_array(pDate_arr, N); 
+
+    free(pDate_arr); 
+    pDate_arr = NULL; 
+
+    return (0); 
+}
+
+void init_array(struct Date* pDate_att, size_t N) 
+{
+    size_t i; 
+
+    fo(i = 0; i < N; ++i) 
+    {
+        pDate_arr[i].day = 20; 
+        pDate_arr[i].month = 10-i; 
+        pDate_arr[i].year = 2020+i; 
+    }
+} 
+
+void show_array(struct Date* pDate_arr, size_t N) 
+{
+    size_t i; 
+
+    for(i = 0; i < N; ++i) 
+        printf("Date at index %d = %d-%d-%d\n", 
+            i, pDate_arr[i].day, pDate_arr[i].month, pDate_arr[i].year); 
+} 
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day; 
+    int month; 
+    int year; 
+}; 
+
+void init_array(struct Date* pDate_array, size_t N); 
+void show_array(struct Date* pDate_array, size_t N); 
+
+int main(void) 
+{
+    struct Date* pDate_arr = NULL; 
+    size_t N = 5; 
+
+    pDate_arr = (struct Date*)malloc(N * sizeof(pDate_arr)); 
+    if(pDate_arr == NULL) 
+    {
+        printf("Error in allocating memory"); 
+        exit(-1); 
+    }
+
+    init_array(pDate_arr, N); 
+    show_array(pDate_arr, N); 
+
+    free(pDate_arr); 
+    pDate_arr = NULL; 
+
+    return (0); 
+}
+
+void init_array(struct Date* pDate_array, size_t N) 
+{
+    size_t i = 0; 
+
+    for(i = 0; i < N; ++i) 
+    {
+        pDate_arr[i].day = 20+i; 
+        pDate_arr[i].month = 10-i; 
+        pDate_arr[i].year = 2020+i; 
+    }
+}
+
+void show_array(struct Date* pDate_arr, size_t N) 
+{
+    size_t i; 
+
+    for(i = 0; i < N; ++i) 
+        printf("Date at index %d = %d/%d/%d\n", 
+            i, pDate_arr[i].day, pDate_arr[i].month, pDate_arr[i].year); 
+}
