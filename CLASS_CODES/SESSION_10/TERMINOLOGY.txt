@@ -1,0 +1,18 @@
+Let Date be the class 
+
+class Date{
+    // some definition 
+}; 
+
+Date myDate;        // myDate is known as INSTANCE VARIABLE 
+
+Date* pDate;        // pointer variable (8 bytes) 
+
+Date& ref = myDate;     // L-value reference variable 
+
+#---------- 
+C++ 11 
+Date&& r_ref = std::move(myDate); 
+// R-VALUE REFERENCE VARIABLE 
+#--------- 
+
