@@ -7112,3 +7112,1875 @@ void show_array(struct Date* pDate_arr, size_t N)
         printf("Date at index %d = %d/%d/%d\n", 
             i, pDate_arr[i].day, pDate_arr[i].month, pDate_arr[i].year); 
 }
+
+=========================================== 03 APRIL 2025 =============================================================
+/* STAGE 1 : Using procedural programming : USING BUITIN FUNCTIONS */
+
+#include <stdio.h>
+#include <stdlib.h> 
+
+int main(void) 
+{
+    double G = 6.67*10e-11; /* Universal Gravitational constant */
+    double m1;  /* for storing mass of object 1 in kgs */
+    double m2;  /* for storing mass of object 2 in kgs */
+    double r;   /* for storing distance between the obejcts in meters */
+    double F;  /* for storing gravitational force in newtons */
+
+    printf("Enter mass of object 1 in kgs : "); 
+    scanf("%lf", &m1); 
+
+    printf("Enter mass of object 2 in kgs : "); 
+    scanf("%lf", &m2); 
+
+    printf("Enter distance between the objects in meters : "); 
+    scanf("%lf", &r); 
+
+    if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+    {
+        printf("Invalid values for mass and/or ditance.\n"); 
+        exit(-1); 
+    }
+
+    F = (G * m1 * m2) / (r * r); 
+
+    printf("Force of gravitation = %lf Newton\n", F); 
+
+    return (0); 
+}
+
+/* stage 2 : object based programming in c++ : using builtin obejcts */
+#include <iostream> 
+
+int main(void) 
+{
+    using std::cout; // ostream : std::ostream 
+    using std::cin;  // istream : std::istream 
+
+    double G = 6.67 * 10e-11; // universal gravitational constant 
+    double m1a;  /* for storing mass of object 1 in kgs */
+    double m2a;  /* for storing madd of obejct 2 in kgs */
+    double ra;   /* for storing distance between the objects in meters */
+    double Fa;   /* for storing force in Newton */
+
+    double m1b; 
+    double m2b; 
+    double rb; 
+    double Fb; 
+
+    cout << "Enter mass of object 1 in kgs : "; 
+    cin >> m1a; 
+
+    cout << "Enter mass of object 2 in kgs : "; 
+    cin >> m2a; 
+
+    cout << "Enter distance between the objects in meters : "; 
+    cin >> ra; 
+
+    if(m1a <= 0.0 || m2a <= 0.0 || ra <= 0.0) 
+    {
+        cout << "Invalid values for mass and/or distance\n"; 
+        exit(-1); 
+    }
+
+    Fa = (G * m1a * m2a) / (ra * ra); 
+
+    std::cout << "Force of gravitation = " << Fa << " Newton\n"; 
+
+    cout << "Enter mass of object 1 in kgs : "; 
+    cin >> m1b; 
+
+    cout << "Enter mass of object 2 in kgs : "; 
+    cin >> m2b; 
+
+    cout << "Enter distance between the objects in meters : "; 
+    cin >> rb; 
+
+    if(m1b <= 0.0 || m2b <= 0.0 || rb <= 0.0) 
+    {
+        cout << "Invalid values for mass and/or distance\n"; 
+        exit(-1); 
+    }
+
+    Fb = (G * m1b * m2b) / (rb * rb); 
+
+    cout << "Force of gravitation = %lf" << Fb << " Newton\n"; 
+
+    return (0); 
+}
+
+/* STAGE 3 : PROCEDURAL PROGRAMMING IN C USING STRUCT */
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct MassAndDistance 
+{
+    double m1; 
+    double m2; 
+    double r; 
+}; 
+
+double ComputeGravitationalForce(struct MassAndDistance* pData); 
+
+int main(void) 
+{
+    struct MassAndDistance sunEarth; 
+    struct MassAndDistance sunJupitor; 
+    double ForceBetweenSunAndEarth; 
+    double ForceBetweenSunAndJupitor; 
+
+    sunEarth.m1 = 1.9198e30; // mass of sun 
+    sunEarth.m2 - 5.9722e24; // mass of earth 
+    sunEarth.r = 149597871000; // distance between them 
+    ForceBetweenSunAndEarth = ComputeGravitationalForce(&sunEarth); 
+    printf("Gravitational force between the Sun and the Earth = %lf Newton\n", 
+                ForceBetweenSunAndEarth); 
+
+    sunJupitor.m1 = 1.9198e30; // mass of sun 
+    sunJupitor.m2 = 1.8981e27; // mass of jupitor 
+    sunJupitor.r = 7600700000; // distance between them 
+    ForceBetweenSunAndJupitor = ComputeGravitationalForce(&sunJupitor); 
+    printf("Gravitational force between the Sun and the Jupitor = %lf Newton\n", 
+            ForceBetweenSunAndJupitor); 
+
+    return 0; 
+}
+
+double ComputeGravitational(struct MassAndDistance* pData) 
+{
+    double G = 6.67 * 10e-11; 
+    double F; 
+
+    if(pData->m1 <= 0.0 || pData->m2 <= 0.0 || pData->r <= 0.0) 
+    {
+        printf("Invalid data for mass and/or distance.. Exitting\n"); 
+        exit(-1); 
+    }
+
+    F = (G * pData->m1 * pData->m2) / (pData->r * pData->r); 
+    return (F); 
+}
+
+/* STAGE : OBJECT BASED PROGRAMMING IN C++ : USING CLASS */
+#include <stdio.h> 
+#include <cstdlib> 
+
+using std::cout; 
+
+class MassAndDistance 
+{
+    private: 
+        double m1;  /* for storing mass of object 1 in kgs */ 
+        double m2;  /* for storing mass of object 2 in kgs */
+        double r;   /* for storing distance between the objects in meters */
+
+    public: 
+        // Constructor 
+        MassAndDistance(double _m1, double _m2, double _r) 
+        {
+            if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+            {
+                cout << "Invalid data for mass and/or distance\n"; 
+                exit(-1); 
+            }
+            this->m1 = _m1; 
+            this->m2 = _m2; 
+            this->r = _r;  
+        }
+
+        // member function 
+        double computeGravitational() 
+        {
+            double G = 6.67 * 10e-11; 
+            double F; 
+
+            F = (G * this->m1 * this->m2) / (this->r * this->r); 
+            return F; 
+        }
+}; 
+
+int main(void) 
+{
+    MassAndDistance sunEarth(1.9891e30, 5.9722e24, 149597871000.0); 
+    MassAndDistance sunJupitor(1.9198e30, 1.89813e27, 760070000000.0); 
+
+    cout << "Gravitational force between the sun and the earth = " 
+            << sunEarth.computeGravitational() << " Newton\n"; 
+
+    cout << "Gravitational force between the sun and the Jupitor = " 
+            << sunJupitor.computeGravitational() << " Newton\n"; 
+
+    return (0); 
+}
+
+#ifndef _COMPUTEGRAVITATIONALDIALOG_H 
+#define _COMPUTEGRAVITATIONALDIALOG_H 
+
+#include <QDialog> 
+#include <QObject> 
+#include <QWidget> 
+#include <QLabel> 
+#include <QLineEdit> 
+#include <QPushButton> 
+#include <QVBoxLayout> 
+#include <QHBoxLayout> 
+
+class ComputeGravitationalDialog : public QDialog 
+{
+    Q_OBJECT 
+    public: 
+        ComputeGravitationalDialog(QWidget parent = nillptr); 
+    public slots: 
+        void readTextBox_1(const QString& str); 
+        void readTextBox_2(const QString& str); 
+        void readTextBox_3(const QString* str); 
+    private: 
+        QLabel* pLabel_1; 
+        QLabel* pLabel_2; 
+        QLabel* pLabel_3; 
+        QLabel* pLabel_4; 
+        QLineEdit* pLineEdit_1; 
+        QLineEdit* pLineEdit_2; 
+        QlineEdit* pLineEdit_3; 
+        QPushButton* pComputeButton; 
+        QPushButton* pCloseButton; 
+        QHBoxLayout* entry_1; 
+        QHBoxLayout* entry_3; 
+        QVBoxLayout* leftLayout; 
+        QVBoxLayout* rightLayout; 
+        QVBoxLayout* mainLayout; 
+        double m1; 
+        double m2; 
+        double r; 
+}; 
+
+#endif /* _COMPUTEGRAVITATIONALDIALOG_H */
+
+#include "computegravitationaldislog.h" 
+
+ComputeGravitationalDialog::ComputeGravitationalDialog(qWidget* parent) : QDialog(parent) 
+{
+    pLabel_1 = new QLabel(tr("Enter mass of object 1 : ")); 
+    pLabel_2 = new QLabel(tr("Enter mass of object 2 : ")); 
+    pLabel_3 = new QLabel(tr("Enter the distance between two objects : ")); 
+    pLabel_4 = new QLabel(re("")); 
+
+    pLineEdit_1 = new QLineEdit; 
+    pLineEdit_2 = new QLineEdit; 
+    pLineEdit_3 = new QLineEdit; 
+
+    pLabel_1->setBuddy(pLineEdit_1); 
+    pLabel_2->setBuddy(pLineEdit_2); 
+    pLabel_2->setBuddy(pLineEdit_3); 
+    
+    pComputeButton = new QPushButton(tr("Compute")); 
+    pComputeButton = new QPushButton(tr("Close")); 
+
+    connect(pCloseButton, 
+            SIGNAL(clicked()), 
+            this,
+            SLOT(close())); 
+
+    connect(pComputeButton, 
+            SIGNAL(clicked()), 
+            this, 
+            SLOT(doCopute())); 
+    
+    connect(pLineEdit_1, 
+            SIGNAL(textChanged(QString)), 
+            this, 
+            SLOT(readTextBox_3(QString))); 
+
+    connet(pLineEdit_2, 
+            SIGNAL(textChanged(QString)), 
+            this, 
+            SLOT(readTextBox_2(QString))); 
+
+    connect(pLineEdit_3, 
+            SIGNAL(textChanged(QString)), 
+            this, 
+            SLOT(readTextBox_3(QString))); 
+
+    entry_1 = new QHBoxLayout; 
+    entry_1->addWidget(pLabel_1); 
+    entry_1->addWidget(pLineEdit_1); 
+
+    entry_2 = new QHBoxLayout; 
+    entry_2->addWidget(pLabel_2); 
+    entry_2->addWidget(pLineEdit_2); 
+
+    entry_3 = new QHBoxLayout; 
+    entry_3->addWidget(pLabel_3); 
+    entry_3->addWidget(pLineEdit_3); 
+
+    leftLayout = new QVBoxLayout; 
+    leftLayout->addLayout(entry_1); 
+    leftLayout->addLayout(entry_2); 
+    leftLayout->addLayout(entry_3); 
+    leftLayout->addWidget(pLabel_4); 
+
+    rightLayout = new QVBoxLayout; 
+    rightLayout->addWidget(pComputeButton); 
+    rightLayout->addWidget(pCloseButton); 
+    rightLayout->addStretch(); 
+
+    mainLayout = new QHBoxLayout; 
+    mainLayout->addLayout(leftLayout); 
+    mainLayout->addLayout(rightLayout); 
+
+    setLayout(mainLayout); 
+    setWindowTitle("Gravitational force Calculator : "); 
+    setFixedHeight(sizeHint().height()); 
+}
+ 
+void ComputeGravitationalDialog::readTextBox_1(const QString& str) 
+{
+    m1 = str.toDouble(); 
+}
+
+void ComputeGravitationalDialog::readTextBox_2(const QString& str) 
+{
+    m2 = str.toDouble(); 
+}
+
+void ComputeGravitationalDialog::readTextBox_3(const QString& str) 
+{
+    r = str.toDouble(); 
+}
+
+void ComputeGravitationalDialog::doCompute() 
+{
+    double G = 6.67*10e-11; 
+    double gravitationalForce = G * m1 * m1 / (r * r); 
+    QString strGravitationalForce; 
+
+    strGravitationalForce.setNum(gravitationalForce, 'g', 12); 
+    pLabel_4->setText(QString("The Gravitational force is : ") + strGravitationalForce); 
+}
+
+#include <stdio.h> 
+
+int main(void) 
+{
+    double m1;  /* for storing mass of object 1 */
+    double m2;  /* fpr storing mass of object 2 */
+    double r;   /* for storing distance between the objects */
+    double G = 6.67 * 10e-11; /* universal gravitational constant */
+    double F;   /* For storing gravitational force of attraction */
+
+    printf("Enter mass of object 1 in kgs :"); 
+    scanf("%lf", &m1); 
+
+    printf("Enter mass of object 2 in kgs : "); 
+    scanf("%lf", &m2); 
+
+    printf("Enter distance between the objects in meters : "); 
+    scanf("%lf", &r); 
+
+    if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+    {
+        printf("Invalid values for mass and/or distance\n"); 
+        exit(-1); 
+    }
+
+    F = G * m1 * m2 / (r * r); 
+
+    printf("Gravitational force of attraction = %lf Newton\n", F); 
+
+    return (0); 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <math.h> 
+
+// defining structure MassAndDistance capturing mass and distance data of objects 
+struct MassAndDistance 
+{
+    double m1; 
+    double m2; 
+    double r; 
+}; 
+
+// Function declarations 
+double ComputeGravitational(struct MassAndDistance* pData); 
+
+int main(void) 
+{
+    // variable declarations 
+    struct MassAndDistance earthSun; 
+    struct MassAndDistance jupitorSun; 
+    double forceBetweenEarthAndSun; 
+    double forceBetweemJupitorAndSun; 
+
+    // code 
+    earthSun.m1 = 1.9891e30; 
+    earthSun.m2 = 5.9722e24; 
+    earthSun.r = 149597871000; 
+    forceBetweenEarthAndSun = ComputeGravitational(&earthSun); 
+    printf("Gravitational force Between the sun and the earth = %lf Newton\n", 
+                forceBetweenEarthAndSun); 
+
+    jupitorSun.m1 = 1.9891e30; 
+    jupitorSun.m2 = 1.89813e27; 
+    jupitorSun.r = 760060000000; 
+    forceBetweenJupitorAndSun = ComputeGravitational(&jupitorSun); 
+    printf("Gravitational force betweem the sun and the jupitor = %lf Newton\n", 
+                forceBetweenJupitorAndSun); 
+
+    return (0); 
+}
+
+double ComputeGravitational(struct MassAndDistance* pData) 
+{
+    // varoable declarations 
+    double G = 6.67 * 10e-11; /* universal constant of gravitation */
+    double F; 
+
+    // code 
+    if(pData->m1 <= 0.0 || pData->m2 <= 0.0 || pData->r <= 0.0) 
+        return (NAN); 
+
+    F = (G * pData->m1 * pData->m2) / (pData->r * pData->r); 
+    return (F); 
+}
+
+#include <iostream> 
+#include <exception> 
+#include <cmath> 
+
+// class definition 
+class MassAndDistance 
+{
+    private: 
+        double m1; 
+        double m2; 
+        double r; 
+
+    public: 
+        MassAndDistance(double _m1, double _m2, double _r) 
+        {
+            if(_m1 <= 0.0 || _m2 <= 0.0 || _r <= 0.0) 
+                throw std::domain_error("Bad values for mass and/or distance\n"); 
+            this->m1 = _m1; 
+            this->m2 = _m2; 
+            this->r = _r; 
+        }
+
+        double ComputeGravitational() const 
+        {
+            // variable declarations 
+            double G = 6.67 * (10e-11); 
+            double F; 
+
+            // code 
+            F = (G * this->m1 * this->m2) / (this->r * this->r) 
+            return F; 
+        }
+}; 
+
+int main(void) 
+{
+    // variable declarations 
+    MassAndDistance earthSun(1.9198 * (10e30), 5.9722 * (10e24), 149597871000.0); 
+    MassAndDistance jupitorSun(1.9891 * (10e30), 1.89813 * (10e27), 760060000000.0); 
+    double forceBetweenSunAndEarth; 
+    double forceBetweenSunAndJupitor; 
+
+    // code 
+    forceBetweenSunAndEarth = earthSun.ComputeGravitational(); 
+    forceBetweenSunAndJupitor = jupitorSun.ComputeGravitational(); 
+
+    std::cout << "Force between the Sun and the Earth is " 
+            << forceBetweenEarthAndSun << " Newton" << std::endl; 
+    std::cout << "Force between the Sun and the Jupitor is " 
+            << forceBetweenSunAndJupitor << " Newton" << std::endl; 
+
+    return 0; 
+}
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Date 
+{
+    int day;
+    int month;
+    int year;
+};
+
+// function declarations
+struct Date* createDateInstance(int _day, int _month, int _year);
+int getDat(struct Date* pDate);
+int getMonth(struct Date* pDate);
+int getYear(struct Date* pDate);
+void setDate(struct Date* pDate, int newDay);
+void setMonth(struct Date* pDate, int newMonth);
+void setYear(struct Date* pDate, int newYear);
+void showDate(struct Date* pDate);
+void releaseDateInstance(struct Date* pDate);
+
+// main function
+int main(void)
+{
+    // client side
+    struct Date* pNewDate = createDateInstance(25, 1, 2023);
+    showDate(pNewDate);
+    setDay(pNewDate, 30);
+    setMonth(pNewDate, 1);
+    setYear(pNewDate, 2024);
+    showDate(pNewDate);
+    printf("%d/%d/%d\n", pDate->day, pDate->month, pDate->year);
+    releaseDateInstance(pNewDate);
+    pNewDate = NULL;
+
+    return (0);
+}
+
+// server side
+struct Date* createDateInstance(int _day, int _month, int _year)
+{
+    struct Date* newDate = NULL;
+
+    newDate = (struct Date*)malloc(sizeof(struct Date));
+    if(newDate == NULL)
+    {
+        fprintf(stderr, "malloc() : fatal : out of memory");
+        exit(-1);
+    }
+
+    newDate->day = _day;
+    newDate->month = _month;
+    newDate->year = _year;
+
+    return (pDate);
+}
+
+int getDay(struct Date* pDate)
+{
+    return (pDate->day);
+}
+
+int getMonth(struct Date* pDate)
+{
+    return (pDate->month);
+}
+
+int getYear(struct Date* pDate)
+{
+    return (pDate->year);
+}
+
+void setMonth(struct Date* pDate, int newMonth)
+{
+    pDate->month = newMonth;
+}
+
+void setDay(struct Date* pDate, int newDay)
+{
+    pDate->day = newDay;
+}
+void setYear(struct Date* pDate, int newYear)
+{
+    pDate->year = newYear;
+}
+
+void showDate(struct Date* pDate)
+{
+    printf("%d/%d/%d\n", pDate->day, pDate->month, pDate->year);
+}
+
+void releaseDateInstance(struct Date* pDate)
+{
+    free(pDate);
+    pDate = NULL;
+}
+
+#include <iostream>
+
+// Company : PRODUCT
+struct MassAndDistance_1
+{
+    double m1;
+    double m2;
+    double r;
+};
+
+// COMPANY : PRODUCT
+class MassAndDistance
+{
+    double m1;
+    double m2;
+    double r;
+};
+
+int main(void)
+{
+    using std::cout;
+    using std::endl;
+
+    // GRAHAK : CLIENT
+    struct MassAndDistance_1 X1;
+    MassAndDistance X2;
+
+    // CLIENT IS ACCESSING THE INTERNAL MEMBERS OF THE PRODUCT
+    // HE?SHE HAS BOUGHT
+    X1.m1 = 1.1;
+    X1.m2 = 2.2;
+    X1.r = 4.4;
+
+    X2.m1 = 1.1;
+    X2.m2 = 2.2;
+    X3.r = 3.3;
+
+    return 0;
+}
+
+class Test
+{
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+};
+
+int main(void)
+{
+    Test t;
+    t.a = 10;
+    t.b = 20;
+    t.c = 30;
+    t.d = 40;
+    t.e = 50;
+
+    return 0;
+}
+
+#include <stdio.h>
+
+struct Test
+{
+    int a;
+    char b;
+    float c;
+};
+
+void test_1(void);
+struct Test g_test_1;
+
+int main(void)
+{
+    test_1();
+    printf("g_test_1.a = %d, g_test_1.b = %c, g_test_1.c = %f\n",
+                g_test_1.a, g_test_1.b, g_test_1.c);
+
+    return 0;
+}
+
+void test_1(void)
+{
+    struct Test t1;
+
+    g_test_1.a = 100;
+    g_test_1.b = 'A';
+    g_test_1.c = 3.14f;
+
+    t1.a = 200;
+    t1.b = 'B';
+    t1.c = 6.38;
+
+    printf("t1.a = %d, t1.b = %c, t1.c = %f\n", t1.a, t1.b, t1.c);
+}
+
+#include <iostream>
+
+using std::cout;
+
+class Test
+{
+    int a;
+    char b;
+    float c;
+};
+
+Test g_test_1;
+
+void test_1(void);
+
+int main(void)
+{
+    test_1();
+    return 0;
+}
+
+void test_1(void)
+{
+    Test t1;
+
+    g_test_1.a = 100;
+    g_test_1.b = 'A';
+    g_test_1.c = 3.14f;
+
+    t1.a = 100;
+    t1.b = 'A';
+    t1.c = 6.38f;
+}
+
+#include <iostream>
+
+using std::cout;
+
+class Test
+{
+    private:
+        int a;
+    public:
+        char b;
+        float c;
+}
+
+Test g_test_1;
+void test_1(void);
+
+int main(void)
+{
+    Test t1;
+
+    g_test_1.a = 100;  // CTE
+    g_test_1.b = 'A';
+    g_test_1.c = 3.14f;
+
+    t1.a = 300; // CTE
+    t1.b = 'B';
+    t1.c = 6.38f;
+}
+
+#include <stdio.h>
+// As per C Standard function cannot be defined inside a structure
+
+struct Date
+{
+    int day;
+    int month;
+    int year;
+
+    // function definition -> NOT allowed inside structure
+    int get_day() // error
+    {
+        return day;
+    }
+};
+
+#include <iostream>
+
+using std::cout;
+
+int compute(int x, int y);
+
+class Date
+{
+    public:
+        int day;
+        int month;
+        int year;
+
+        void show(void)
+        {
+            cout << day << "/" << month << "/" << year << '\n';
+        }
+
+        void show(Date* pDate)
+        {
+            cout << pDate->day << "/" << pDate->month << "/" << pDate->year << "\n";
+        }
+
+        // EVERY FUNCTION WRITTEN INSIDE DATE CLASS EXIST TO PROCESS OBJECT OF DATE CLASS
+        // EVERY SUCH FUNCTION MUST ACCEPT ADDRESS OF DATE OF OBJECT TO UNDERSTAND WHICH DATE OBJECT TO PROCESS IN THE CURRENT CALL
+};
+
+// Let C be any class
+class C
+{
+    public:
+        void f(C* pC, /*other optional params*/ )
+        {}
+
+        void g()
+        {}
+};
+
+int main(void)
+{
+    int result;
+
+    result = compute(10, 5);
+
+    Date myBirthDate;
+    myBirthDate.day = 20;
+    myBirthDate.month = 7;
+    myBirthDate.year = 1986;
+
+    Date::show(&myBirthDate);
+
+    Date d1;
+    d1.day = 1;
+    d1.month = 2;
+    d1.year = 1986;
+    Date::show(&d1);
+
+    Date d2;
+    d2.day = 2;
+    d2.month = 10;
+    d2.year = 1988;
+    Date::show(&d2);
+}
+
+int compute(int a, int b)
+{
+    return (a + b) * (a - b);
+}
+////////////////////
+class Date
+{
+    public:
+        int day;
+        int month;
+        int year;
+
+        void show()
+        {
+            cout << this->day << "/" << this->month << "/" << this->year << "\n";
+        }
+};
+
+int main(void)
+{
+    Date myBirthDate;
+
+    myBirthDate.day = 20;
+    myBirthDate.month = 7;
+    myBirthDate.year = 1986;
+
+    myBirthDate.show(); // Date::show(&myBirthDate)
+}
+
+#include <iostream>
+
+using std::cout;
+using std::endl; // use this for '\n'
+
+class Date
+{
+    public:
+        int day;
+        int month;
+        int year;
+
+        void show()
+        {
+            cout << "***** Enter Date::show() *****" << endl;
+            cout << "Address of object used for making current call : " << this << endl;
+            cout << this->day << "/" << this->month << "/" << this->year << endl;
+            cout << "***** LEAVE Date::show() *****" << endl;
+        }
+};
+
+int main(void)
+{
+    Date d1;
+    Date d2;
+    Date d3;
+
+    // setting day month year of d1
+    d1.day = 2;
+    d1.month = 2;
+    d1.year = 2025;
+
+    // setting day month year of d2
+    d2.day = 5;
+    d2.month = 6;
+    d2.year = 1990;
+
+    // setting day month year of d3
+    d3.day = 11;
+    d3.month = 12;
+    d3.year = 1235;
+
+    cout << "main() : making use of object 'd1' to make call to Date::show() " << endl;
+    cout << "main() : Address of object 'd1' is : " << &d1 << endl;
+    d1.show(); // == Date::show(&d1); // formal parameter will be 'this' pointer
+
+    cout << "main() : making use of object 'd2' to make call to Date::show()" << endl;
+    cout << "main() : Address of object 'd2' is : " << &d2 << endl;
+    d2.show(); // == Date::show(&d2); // formal parameter is 'this' pointer
+
+    cout << "main() : making use of obejct 'd3' to make call to Date::show() " << endl;
+    cout << "main() : Address of object 'd3' is : " << &d3 << endl;
+    d3.show(); // == Date::show(&d3) // formal parameter will be 'this' pointer
+
+    return 0;
+}
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+class Date
+{
+    public:
+        int day;
+        int month;
+        int year;
+
+        void show()
+        {
+            cout << "**** ENTER Date::show() *****" << endl;
+            cout << "Address of object used to make current call : " << this << endl;
+            cout << this->day << "/" << this->month << "/" << this->year << endl;
+            cout << "***** LEAVE Date::show() *****" << endl;
+        }
+};
+
+int main(void)
+{
+    Date d1;
+    Date d2;
+    Date d3;
+
+    // setting day month year of d1
+    d1.day = 6;
+    d1.month = 5;
+    d1.year = 2025;
+
+    // setting day month year of d2
+    d2.month = 1;
+    d2.day = 12;
+    d2.year = 2024;
+
+    // setting day month year of d3
+    d3.day = 1;
+    d3.month = 1;
+    d3.year = 2025;
+
+    cout << "main() : making use of object 'd1' to call Date::show() " << endl;
+    cout << "Address of object d1 is : " << &d1 << endl;
+    d1.show();  // Date::show(&d1) -> formal parameter is Date* this
+
+    cout << "main() : making use of object 'd2' to call Date::show()" << endl;
+    cout << "Address of object 'd2' is : " << &d2 << endl;
+    d2.show();  // Date::show(&d2) -> formal parameter is Date* this
+
+    cout << "main() : making use of object 'd3' to call Date::show()" << endl;
+    cout << "Address of object 'd3' is : " << &d3 << endl;
+    d3.show(); // Date::show(&d3) => formal parameter is Date* this
+
+    return 0;
+}
+
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+class Date
+{
+    public:
+        int day;
+        int month;
+        int year;
+
+        void show()
+        {
+            cout << "***** Enter Date::show() ****" << endl;
+            cout << "Address of object used for making current call = " << this << endl;
+            cout << day << "/" << month << "/" << year << endl;
+            cout << "***** LEAVE Date::show() *****" << endl;
+        }
+};
+
+int main(void)
+{
+    // Defining three local objects of class Date
+    Date d1, d2, d3;
+
+    // Defining three pointers to class Date
+    Date* pDate1 = 0;
+    Date* pDate2 = 0;
+    Date* pDate3 = 0;
+
+    // set pointers to addresses of objects
+    pDate1 = &d1;
+    pDate2 = &d2;
+    pDate3 = &d3;
+
+    // setting day month year of d1
+    pDate1->day = 5;
+    pDate1->month = 6;
+    pDate1->year = 2025;
+
+    // setting day month year of d2
+    pDate2->day = 1;
+    pDate2->month = 1;
+    pDate2->year = 1970;
+
+    // setting day month year of d3
+    pDate3->day = 10;
+    pDate3->month = 1;
+    pDate3->year = 1990;
+
+    cout << "main() : making use of pointer pDate1 to call Date::show() " << endl;
+    cout << "main() : address of object 'd1' is : " << pDate1 << endl;
+    pDate1->show(); // Date::show(pDate1)
+
+    cout << "main() : making use of pointer pDate2 to call Date::show()" << endl;
+    cout << "main() : address of object 'd2' is : " << pDate2 << endl;
+    pDate2->show(); // Date::show(pDate2);
+
+    cout << "main() : making use of pointer pDate3 to call Date::show()" << endl;
+    cout << "main() : address of object 'd3' is : " << pDate3 << endl;
+    pDate3->show(); // Date::show(pDate3)
+
+    return 0;
+}
+// pDate1->show() == Date::show(pDate1)
+// Date* pDate1
+// Date* this
+// typeof(pDate1) == typeof(this)
+d1.show()
+this = &d1
+pDate1->show()
+this = pDate1
+
+#include <iostream>
+
+class Test
+{
+    private:
+        int a;
+        int b;
+        float c;
+    public:
+        int d;
+        int e;
+        int f;
+};
+
+// Test_object.a, Test_object.b, test_object.c
+// Test_ptr->a, test_pre->b, test_ptr->c
+
+int main(void)
+{
+    Test t1;
+    Test t2;
+
+    // CTE
+    t1.a = 100;
+    t1.b = 'a';
+    t1.c = 3.14f;
+
+    // no CTE
+    t1.d = 100;
+    t1.e = 200;
+    t1.f = 400;
+}
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+class Date
+{
+    public:
+        int day;
+         int month;
+        int year;
+
+        void show(Date* pDate)
+        {
+            cout << pDate->day << "/" <<pDate->month << "/" << pDate->year << endl;
+        }
+};
+
+int main(void)
+{
+    Date myDate; // day month year
+    Date d1;        // day month year
+
+    myDate.day = 8;
+    myDate.month = 2;
+    myDate.year = 2025;
+
+    Date::show(&myDate);
+    Date::show(&d1);
+}
+
+class C
+{
+    public:
+        void f()
+        {
+            // which object of class C should be preocessed in current call of C::f()
+        }
+};
+
+class YourClassName
+{
+    private:
+        int a;
+        char b;
+        float c;
+    public:
+        // YourClassName* this => first formal parameter
+        void YourFunctionName(int m, int n)
+        {
+            this->data_member;
+            this->function member
+
+            this->a
+            this->b
+            this->c
+
+            m
+            n
+        }
+};
+
+int main(void)
+{
+    YourClassName YourObjectName;
+
+    YourClassName::YourFunctionName(&yourObjectName);
+    YourObjectName.YourFunctionName(10, 20);
+}
+
+// this version of c does not break abstraction barrier
+#include <stdio.h>
+
+// server side start
+struct Date
+{
+    int day;
+    int month;
+    int year;
+};
+
+void show(struct Date* pDate)
+{
+    printf("%d/%d/%d\n", pDate->day, pDate->month, pDate->year);
+}
+// server side end
+
+// client side start
+int main(void)
+{
+    struct Date myDate = {8, 2, 2025};
+
+    show(&myDate);
+    return (0);
+}
+// client side end
+
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+// server side start
+class Date
+{
+    private:
+        int day, month, year;
+    public:
+        void show()
+        {
+            cout << this->day << "/" << this->month << "/" << this->year << endl;
+        }
+};
+// server side end
+
+// client side start
+int main(void)
+{
+    // day month and year of myDate will contain garbage values
+    Date myDate;
+
+    myDate.show();
+    return 0;
+}
+// client side end
+
+// header file inclusion
+#include <iostream>
+
+// importing symbols 'cout' and 'endl' from standard namespace
+using std::cout;
+using std::endl;
+
+// server side start
+class Date
+{
+    private:
+        // data layout information
+        int day;
+        int month;
+        int year;
+    public:
+        // public member functions
+        // REMEMBER -> first parameter of init() function is Date* this
+        void init(int init_day, int init_month, int init_year)
+        {
+            this->day = init_day;
+            this->month = init_month;
+            this->year = init_year;
+        }
+
+        // REMEMBER -> first parameter of show() is Date* this
+        void show()
+        {
+            cout << this->day << "/" << this->month << "/" << this->year << endl;
+        }
+};
+// server side end
+
+// client-side start
+int main(void)
+{
+    // create an objet of class Date
+    Date myDate;
+
+    // use object of class Date
+    cout << "myDate before calling init() function on it" << endl;
+    myDate.show(); // Date::show(&myDate);
+    myDate.init(8, 2, 2025); // Date::init(&myDate, 8, 2, 2025);
+    cout << "myDate after calling init() function on it" << endl;
+    myDate.show(); // Date::show(&myDate);
+
+    return 0;
+}
+// client-side end
+
+#include <iostream>
+#include <typeinfo>
+
+using std::cout;
+using std::endl;
+
+class Date
+{
+    private:
+        int day;
+        int month;
+        int year;
+    public:
+        void init(int init_day, int init_month, int init_year)
+        {
+            cout << "Date::init() : typeof(this) = " << typeid(this).name() << endl;
+            this->day = init_day;
+            this->month = init_month;
+            this->year = init_year;
+        }
+
+        void show()
+        {
+            cout << "Date::show() : typeof(this) = " << typeid(this).name() << endl;
+            cout << day << "/" << month << "/" << year << endl;
+        }
+};
+
+int main(void)
+{
+    Date myDate;
+
+    myDate.init(8, 2, 2025);
+    myDate.show();
+
+    return 0;
+}
+
+#include <stdio.h>
+
+struct Date
+{
+    int day;
+    int month;
+    int year;
+};
+
+int main(void)
+{
+    int num = 10;
+    printf("num = %d\n", num); // 10 will be printed
+
+    struct Date myDate = {9, 2, 2025};
+    printf("%d/%d/%d\n", myDate.day, myDate.month, myDate.year);
+
+    return (0);
+}
+
+#include <iostream>
+
+class Date
+{
+    private:
+        int day;
+        int month;
+        int year;
+
+    public:
+        void init(int init_day, int init_month, int init_year)
+        {
+            this->day = init_day;
+            this->month = init_month;
+            this->year = init_year;
+        }
+
+        void show()
+        {
+            std::cout << this->day << "/" << this->month << "/" << this->year << endl;
+        }
+};
+
+int main(void)
+{
+    int num = 100;
+    printf("num = %d\n", num); // 100 will be printed
+
+    Date myDate; // There is no way as of now to initialize an object of Date
+                    // we can add init() function
+    myDate.init(9, 2, 2025);
+
+    // add show() function
+    myDate.show(); // 9, 2, 2025
+
+    return 0;
+}
+
+/*
+    At C++ syntax level,
+    allocation of memory to object is done by
+    Date myDate;
+
+    Setting value for the first time is done by myDate.init(9, 2, 2025)
+    These are two separate steps and therefore do not come under category of initialization
+    If we could do something like
+    Date myDate(9, 2, 2025);
+    then it will come under category of initialization
+
+    Date myDate(9, 2, 2025)
+    After reading this line C++ should,
+    first allocate memory of 12 bytes for new object of class Date, name that object as myDate
+    and then INTERNALLY SHOULD CALL init() function on myDate with 9, 2, 2025 as actual parameters
+*/
+
+#include <stdio.h>
+
+using std::cout;
+using std::endl;
+
+class Date
+{
+    private:
+        int day;
+        int month;
+        int year;
+
+    public:
+        // constructor function
+        Date(int init_day, int init_month, int init_year)
+        {
+            this->day = init_day;
+            this->month = init_month;
+            this->year = init_year;
+        }
+
+        void show()
+        {
+            cout << day << "/" << month << "/" << year << endl;
+        }
+};
+
+int main(void)
+{
+    Date myDate(9, 2, 2025);
+    // 12 bytes of memory is allocated to Date object
+    // Make call to Date::Date(&myDate, 9, 2, 2025)
+    myDate.show(); // Date::show(&myDate)
+
+    return 0;
+}
+
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+class Date
+{
+    private:
+        int day;
+        int month;
+        int year;
+
+    public:
+        // Constructor function
+        Date(int init_day, int init_month, int init_year)
+        {
+            cout << "***** Date CONSTRUCTOR enter *****" << endl;
+            cout << "Address of newly allocated object : " << this << endl;
+            this->day = init_day;
+            this->month = init_month;
+            this->year = init_year;
+            cout << "***** Date Constructor leave *******" << endl;
+        }
+
+        void show()
+        {
+            cout << "***** Date::show() ENTER *****" << endl;
+            cout << "Address of object whose members must be shown : " << this << endl;
+            cout << day << "/" << month << "/" << year << endl;
+            cout << "***** Date::show() LEAVE *****" << endl;
+        }
+};
+
+int main(void)
+{
+    // Memory allocation to 12 bytes on stack frame of main() + call to constructor
+    Date myDate(10, 7, 1986);
+
+    // Memory allocation to 12 bytes on stack frame of main() + call to constructor
+    Date cpaBirthDate(1, 12, 2009);
+
+    myDate.show();
+    cpaBirthDate.show();
+
+    return 0;
+}
+
+#include <iostream>
+#include <cstdlib>
+
+using std::cout;
+using std::endl;
+
+class MassAndDistance
+{
+    private:
+        double m1;
+        double m2;
+        double r;
+
+    public:
+        MassAndDistance(double _m1, double _m2, double _r)
+        {
+            this->m1 = _m1;
+            this->m2 = _m2;
+            this->r = _r;
+        }
+
+        double computeGravitational()
+        {
+            double G = (6.67 * 10e-11);
+            double F;
+
+            if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0)
+            {
+                cout << "Invalid values of mass and/or distance" << endl;
+                cout << "Exitting the application..." << endl;
+                exit(-1);
+            }
+
+            F = (G * m1 * m2) / (r * r);
+            return F;
+        }
+};
+
+int main(void)
+{
+    MassAndDistance sunEarth(1.9891e30, 5.9722e24, 149597871000.0);
+
+    cout << "Gravitational force of attraction between the Sun and the Earth is = "
+            << sunEarth.computeGravitational() << " Newton" << endl;
+
+    return 0;
+}
+
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::endl;
+using std::string;
+
+void string_demo(void);
+
+int main(void)
+{
+    string_demo();
+    return 0;
+}
+
+void string_demo(void)
+{
+    string s1;
+    string s2("Hello");
+    string s3(s2);
+
+    cout << "--------- STRING DEMO ENTER ----------" << endl;
+    cout << "s1 : " << s1 << endl; // empty
+    cout << "s2 : " << s2 << endl; // hello
+    cout << "s3 : " << s3 << endl; // hello
+    cout << "addr(s2) == " << &s2 << endl;
+    cout << "addr(s3) == " << &s3 << endl;
+    cout << "Contents of s2 and s3 are same but Address are different " << endl
+        << "this proves that s3 is a clone of s2" << endl;
+
+    cout << "Show a string char by char : " << endl;
+    cout << "METHOD 1 : Using index " << endl;
+    for(string::size_type i = 0; i < s1.size(); ++i)
+        cout << "s1[" << i << "]" << s1[i] << endl;
+
+    for(string::size_type i = 0; i < s2.size(); ++i)
+        cout << "s2[" << i << "]" << s2[i] << endl;
+
+    for(string::size_type i = 0; i < s3.size(); ++i)
+        cout << "s3[" << i << "]" << s3[i] << endl;
+    cout << "--------- METHOD 1 ENDS ----------" << endl;
+
+    cout << "METHOD 2 : USING ITERATOR" << endl;
+    for(string::iterator iter = s1.begin(); iter != s1.end(); ++iter)
+        cout << "*iter = " << *iter << endl;
+    cout << "s2 : " << endl;
+    for(string::iterator iter = s2.begin(); iter != s2.end(); ++iter)
+        cout << "*iter = " << *iter << endl;
+    cout << "s3 : " << endl;
+    for(string::iterator iter = s3.begin(); iter != s3.end(); ++iter)
+        cout << "*iter = " << *iter << endl;
+    cout << "--- METHOD 2 ENDS--------" << endl;
+    cout << "------- STRING DEMO LEAVE ----------" << endl;
+}
+
+// string -> dynamically resizable array
+// lbrary implementation
+/*
+    namespace std
+    {
+        class string
+        {
+            public:
+                typedef unsigned long long size_type;
+        };
+    }
+*/
+
+int p;
+
+int main(void)
+{
+    int i; // definition part
+
+    for()
+    {
+        // i in main is accessible here
+        for()
+        {
+            int k;
+            // i in main is accessible herer
+            // k is accessible
+        }
+        // k is not accessible
+    }
+}
+
+void f()
+{
+    // i in main() isn't accessible here
+}
+
+// BLOCK statment -> new scope
+// FUNCTION / NAMESPACE / CLASS -> blocks -> own scope -> names
+// They are known as named blocks
+
+class Date
+{
+    public:
+        typedef int day_t;
+};
+
+namespace X2 {
+    int num;
+
+    void test()
+    {
+
+    }
+
+    class Y{};
+}
+
+// Namespace name::any name in namespace
+X2::num
+X2::test()
+X2::Y obj
+
+// ClassName::static data member
+// classname::static member function
+// classname::typedef
+
+class Date
+{
+    private:
+        int day; // non-static data member
+        int month; // non-static data member
+        static int year; // static data member
+    public:
+        // static member function
+        static void test()
+        {}
+
+        // non-static member function
+        void get_Day()
+        {}
+
+        // typedef
+        typedef int day_t;
+
+        class XYZ {};
+}
+
+// inside class one can have 6 kind of entities
+1) static data member
+2) non-static data member
+3) static member function
+4) non-static member function
+5) typedef
+6) nested class
+
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+// Namespace : It is a bloc for creating new names
+// Inside  namespace X we have defined following names
+// num, test, day_t, Date, Y
+namespace X
+{
+    / data variable
+    int num;
+
+    // function variable
+    void test(void) {
+        cout << "Hello World!!" << endl;
+    }
+
+    // typedef
+    typedef int day_t;
+
+    // class
+    class Date {
+        private:
+            int day, month, year;
+        public:
+            Date() {
+                day = 1;
+                month = 1;
+                year = 1970;
+            }
+    };
+
+    // namespace
+    namespace Y {
+        int p;
+    }
+}
+
+class Test
+{
+    public:
+        int num; // non static data member
+        static int snum; // static data member
+
+        // member function
+        static void stest_function()
+        {
+            cout << "Inside static test() " << endl;
+        }
+
+        // typedef
+        typedef int pqr_t;
+
+        // class
+        class PQR
+        {
+            private:
+                int p, q, r;
+        };
+};
+
+// definition of static variable name inside class
+int Test::snum = 100;
+
+void namespace_demo(void);
+void class_demo(void);
+
+int main(void)
+{
+    namespace_demo();
+    class_demo();
+    return 0;
+}
+
+void namespace_demo(void)
+{
+    X::num = 100; // ok
+    X:test(); // ok
+    X::Date myDate; // ok
+    X::day_t day; // ok
+    X::Y::p = 10;  //ok
+}
+
+void class_demo(void)
+{
+    // Test::num; // not allowed
+    // Test::test_function(); // not allowed
+
+    Test::snum = 100; // ok
+    Test::stest_function(); // ok
+    Test::pqr_t num = 100;
+    Test::PQR myObj; // ok
+}
+
+Theory :
+X::Y -> ok
+    where
+    1) X is a namespace and Y can be -
+        a) data variable 2) function variable 3) typedef 4) class 5) namespace
+    2) X is a class and Y can be -
+        a) static data member 2) non-static data member
+        c) member function d) static member function
+        e) typedef f) class
+        Note - Y is avaialble as per public-private rules
+
+void test_func_1()
+{
+    outer_loop:
+    for(int i = 0; i < 5; ++i)
+    {
+        inner_loop:
+        for(int j = 0; j < 5; ++j)
+        {
+            if(cond)
+                goto outer_loop; // highly undesirable unless we are writting a very low level software
+        }
+    }
+}
+
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::endl;
+using std::string;
+
+int main(void)
+{
+    string s2("ABCDE");
+    string::iterator iter = s2.begin();
+    cout << "*iter = " << *iter << endl; // *iter = 'A"
+
+    ++iter; // advance internal pointer to next character (method 1)
+    cout << "*iter = " << *iter << endl; // *iter = 'B';
+
+    iter++; // advance internal current pointer to next character (method 2)
+    cout << "*iter = " << *iter << endl; // *iter = 'C';
+
+    iter = iter + 1;
+    cout << "*iter = " << *iter << endl; // *iter = 'D'
+
+    iter =  s2.begin();
+    while(iter != s2.end())
+    {
+        cout << "*iter = " << *iter << endl;
+        ++iter;
+    }
+
+    return 0;
+}
+
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::endl;
+using std::string;
+
+void string_iterator_demo(void);
+
+int main(void)
+{
+    string_iterator_demo();
+    return 0;
+}
+
+void string_iterator_demo(void)
+{
+    string s("ABCDE");
+
+    // 1 : using iterator and while loop
+    cout << "Repeat 1 : " << endl;
+    string::iterator my_iter = s.begin();
+    while(my_iter != s.end())
+    {
+        cout << "Current char : " << *my_iter << endl;
+        ++my_iter; // pre-increment
+    }
+
+    // 2 : using iterator and while loop
+    cout << "Repeat 2 : " << endl;
+    string::iterator iter_1 = s.begin();
+    while(iter_1 != s.end())
+    {
+        cout << "Current char : " << *iter << endl;
+        iter_1++; // post-increment
+    }
+
+    // 3 : using iterator and while loop
+    cout << "Repeat 3 : " << endl;
+    string::iterator iter_of_s = s.begin();
+    while(iter_of_s != s.end())
+    {
+        cout << "current char = " << *iter << endl;
+        iter = iter + 1;
+    }
+
+    // -------
+    //1 : using for loop and iterator
+    cout << "Repeat 1: using for loop  and iterator" << endl;
+    for(string::iterator iter_2 = s.begin(); iter_2 != s.end(); ++iter)
+    {
+        cout << "*iter_2 = " << *iter_2 << endl;
+    }
+    // iter_2 is not available here
+
+    // 2: using for loop  and iterator
+    cout << "Repeat 2 : using for loop and iterator : " << endl;
+    for(string::iterator iterOfStr = s.begin(); iterOfStr != s.end(); iterOfStr++)
+    {
+        cout << "*iterOfStr = " << *iterOfStr << endl;
+    }
+
+    // 3: using for loop and iterator
+    cout << "Repeat 3 : Using for loop and iterator : " << endl;
+    string strNameOfAcademy("CoreCode Programming academy");
+    for(
+        string::iterator iter = strNameOfAcademy.begin();
+        iter != strNameOfAcademy.end();
+        iter = iter + 1
+    )
+        cout << "*iter = " << *iter << endl;
+}
+
+/* Do memory is automatically freed when we return from a function where class objects are
+    present who has internally allocated memory
+*/
