@@ -8984,3 +8984,287 @@ void string_iterator_demo(void)
 /* Do memory is automatically freed when we return from a function where class objects are
     present who has internally allocated memory
 */
+
+// ================== 16 JUNE 2025 ================ 
+
+#include <stdio.h> 
+
+int main(void) 
+{
+    double m1; /* for storing mass of object 1 */
+    double m2; /* for storing mass of object 2 */
+    double r; /* for storing distance betweem the objects */ 
+    double G = 6.67 * 10e-11; /* universal constant of gravitation */ 
+    double F; /* for storing geavitational force of attraction */
+
+    printf("Enter mass of object 1 in kgs: "); 
+    scanf("%lf", &m1);  
+
+    printf("Enter mass of object 2 in kgs : "); 
+    scanf("%lf", &m2); 
+
+    printf("Enter the distance between the objects in meter : "); 
+    scanf("%lf", &r); 
+
+    if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+    {
+        printf("Invalid values for mass and/or distance\n"); 
+        return (-1); 
+    }
+
+    F = (G * m1 * m2) / (r * r); 
+    printf("Gravitational force of attraction = %lf Newtons\n", F); 
+
+    return (0); 
+}
+
+#include <iostream> 
+
+int main(void) 
+{
+    std::cout << "Hello, World!" << std::endl; 
+    return 0; 
+}
+
+#include <Windows.h> 
+
+LRESULT callbaCK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam); 
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLine, int nShowCmd) 
+{
+    // variable declarations 
+    static TCHAR szClassName[] = TEXT("The Standard Window"); 
+    static TCHAR szwindowTitle[] = TEXT("Sarthak Jaiswal"); 
+
+    wNDCLASSEX wnd; 
+    MSG msg; 
+
+    HWND hwnd; 
+
+    memset(&wnd, 0, sizeof(WNDCLASSEX)); 
+    memset(&msg, 0, sizeof(mSG)); 
+
+    wnd.cbsize = sizeof(WNDCLASSEX); 
+    wnd.cnClsExtra = 0; 
+    wnd.cbWndExtra = 0; 
+    wnd.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH); 
+    wnd.hIcon = LoadIcon(NULL, IDI_APPLICATION); 
+    wnd.hIconSm = LoadIcon(NULL, IDI_APPLICATION); 
+    wnd.hCursor = LoadCursor(NULL, IDC_ARROW); 
+    wnd.hInstance = hInstance; 
+    wnd.lpszClassName = lpszClassName; 
+    wnd.lpfnWndProc = WndProc; 
+    wnd.lpszMenuName = NULL; 
+    wnd.style = CS_HREDRAW | CS_VREDRAW; 
+
+    RegisterClassEx(&wnd); 
+
+    hwnd = CreateWindowEx(
+        WS_EX_APPWINDOW, 
+        szClassName, 
+        szWindowTitle, 
+        WS_OVERLAPPEDWINDOW, 
+        CW_USEDEFAULT, 
+        CW_USEDEFAULT, 
+        CW_USEDEFAUlT, 
+        CW_USEDEFAULT, 
+        NULL, 
+        NULL, 
+        hInstance, 
+        NULL 
+    ); 
+
+    ShowWindow(hwnd); 
+    UpdateWindow(hwnd); 
+
+    while(GetMessage(&msg, NULL, 0, 0)) 
+    {
+        TranslateMessage(&msg); 
+        DispatchMessage(&msg); 
+    }
+
+    return (msg.wParam); 
+}
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
+{
+    switch(uMsg) 
+    {
+        case WM_DESTROY:   
+            PostQuitMessage(0); 
+            break; 
+
+        default: 
+            break; 
+    }
+
+    return (DefWindowProc(hwnd, uMsg, wParam, lParam)); 
+}
+
+// Stange 1 : Procedural Programming : Using built-in functions 
+#include <stdio.h> 
+
+int main(void) 
+{
+    double G = 6.67 * 10e-11; /* Universal Gravitational Cosntant */
+    double m1; /* fpr storing mass of object 1 in kgs */
+    double m2; /* for storing mass of object 2 in kgs */
+    double r; /* for storing distance in kgs */ 
+    double F; /* for stroing force in Newton */ 
+    
+    printf("Enter mass of object 1 in kgs : "); 
+    scanf("%lf", &m1); 
+
+    printf("Enter mass of object 2 in kgs : "); 
+    scanf("%lf", &m2); 
+
+    printf("Enter distance between two objects in meters : "); 
+    scanf("%lf", &r); 
+
+    if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+    {
+        printf("Invalid values for mass and/or distance\n"); 
+        return (-1); 
+    }
+
+    F = (G * m1 * m2) / (r * r); 
+
+    printf("Force of gravitation: %lf Newton\n", F); 
+    return (0); 
+} 
+
+// STAGE 2 : OBJECT BASED programming in C++ : Using built in objects 
+#include <iostream> 
+
+int main(void) 
+{
+    using std::cout; // ostream | std::ostream 
+    using std::cin;  // istream | std::istream 
+
+    double G = 6.67 * 10e-11;   // universal gravitational constant 
+    double m1;                  // for storing mass of object 1 in kgs 
+    double m2;                  // for storing mass of object 2 in kgs 
+    double r;                   // for storing distance between the objects 
+    double F;                   // for storing the force of attraction in Newton 
+
+    cout << "Enter mass of object 1 in kgs: "; 
+    cin >> m1; 
+
+    cout << "Enter mass of object 2 in kgs : "; 
+    cin >> m2; 
+
+    cout << "Enter distance between the objects in meters : "; 
+    cin >> r; 
+
+    if(m1 <= 0.0 || m2 <= 0.0 || r <= 0.0) 
+    {
+        cout << "Invalid values for mass and/or distance\n"; 
+        return -1; 
+    }
+
+    F = (G * m1 * m2) / (r * r); 
+    cout << "Force of Gravitation is " << F << " Newton\n"; 
+
+    return 0; 
+}
+
+// STAGE 3: procedural programming in C using struct 
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct MassAndDistance 
+{
+    double m1; 
+    double m2; 
+    double r; 
+}; 
+
+double ComputeGravitationalForce(struct MassAndDistance* pData); 
+
+int main(void) 
+{
+    struct MassAndDistance sunEarth; 
+    struct MassAndDistance sunJupitor; 
+    double forceBetweenSunAndEarth; 
+    double forceBetweenJupitorAndSun; 
+
+    sunEarth.m1 = 1.9891e30; // mass of sun 
+    sunEarth.m2 = 5.9722e24; // mass of earth 
+    sunEarth.r = 149597871000; // distance between them 
+
+    forceBetweenSunAndEarth = ComputeGravitationalForce(&sunEarth); 
+    printf("Gravitational force between sun and earth = %lf N\n", forceBetweenSunAndEarth);
+    
+    sunJupitor.m1 = 1.9891e30; // mass of sun 
+    sunJupitor.m2 = 1.89813e27; // mass of earth     
+    sunJupitor.r = 760070000000; // distance between them 
+    forceBetweenSunAndJupitor = ComputeGravitationalForce(&sunJupitor); 
+    printf("Gravitational force between sun and jupitor = %lf N\n", forceBetweenSunAndJupitor); 
+
+    return (0); 
+}
+
+double ComputeGravitationalForce(struct MassAndDistance* pData) 
+{
+    double F; 
+    double G = 6.67 * 10e-11; 
+
+    if(pData->m1 <= 0.0 || pData->m2 <= 0.0 || pData->r <= 0.0) 
+    {
+        printf("Invalid data for mass and/or distance. Exitting..\n"); 
+        exit(-1); 
+    }
+
+    F = (G * pData->m1 * pData->m2) / (pData->r * pData->r); 
+    return (F); 
+}
+
+// STAGE 4 : OBJECT BASED PROGRAMMING IN C++ USING CLASS 
+#include <iostream> 
+#include <cstdlib> 
+
+using std::cout; 
+
+class MassAndDistance 
+{
+    private: 
+        double m1; /* for storing mass of object 1 */ 
+        double m2; /* for storing mass of object 2 */ 
+        double r;  /* for storing disttance between the objects */ 
+
+    public: 
+        // constructor 
+        MassAndDistance(double _m1, double _m2, double _r) 
+        {
+            if(_m1 <= 0.0 || _m2 <= 0.0 || _r <= 0.0) 
+            {
+                cout << "Invalid data for mass or distance\n"; 
+                exit(-1); 
+            }
+            this->m1 = _m1; 
+            this->m2 = _m2; 
+            this->r = _r; 
+        }
+
+        // member function 
+        double computeGravitational() 
+        {
+            double G = 6.67*10e-11; 
+            double F; 
+            
+            F = (G * this->m1 * this->m2) / (this->r * this->r); 
+            return F; 
+        }
+}; 
+
+int main(void) 
+{
+    MassAndDistance sunEarth(1.9891e30, 5.9722e24, 149597871000.0); 
+    MassAndDistance sunJupitor(1.9891e30, 1.89813e27, 76007000000.0); 
+
+    cout << "Gracitational force between sun and earth is " << sunEarth.computeGravitational() << " Newton\n"; 
+    cout << "Gravitational force between sun and jupitor is " << sunJupitor.computeGravitational() << " Newton\n"; 
+
+    return 0; 
+} 
+
