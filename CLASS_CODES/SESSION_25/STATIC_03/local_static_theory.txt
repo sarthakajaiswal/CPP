@@ -1,0 +1,20 @@
+1) visibility:
+    non-static: restricted to a function
+    static: restricted to a function
+
+2) Time of Allocation
+    non-static: dynamic (after function is called)
+    static: static (at time of building exe)
+
+3) Frequency of allocation
+    non-static: per function call
+    static: once
+
+4) lifetime
+    non-static: lifetime of function call
+    static: lifetime of process (application/program)
+
+5) storage location
+    non-static: stack frame of called function (on stack of calling thread)
+    static: one of the static section (data/bss/read-only)
+
