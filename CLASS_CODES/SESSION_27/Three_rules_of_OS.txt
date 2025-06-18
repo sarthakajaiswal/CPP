@@ -1,0 +1,8 @@
+if a process has accessed a virtual address and
+
+a) if the virtual address is mapped in the process address space
+b) if the virtual address is being accessed for performing an operation
+    which is permitted by the section to which it belongs
+c) if it is in USER ADDRESS SPACE (and not in kernel address space)
+
+then its access CANNOT BE PREVENTED at run-time
