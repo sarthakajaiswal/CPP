@@ -1,0 +1,34 @@
+function:
+    non-static: it can access static and non-static data members
+                of calling objects (not-all objects)
+    static: can access only static data
+
+#------------------------------------------------------------------
+
+#include <iostream>
+
+class X {
+private:
+    int p, q, r;
+    static int num;
+
+public:
+    X(int _p, int _q, int _r) {
+        p = _p;
+        q = _q;
+        r = _r;
+    }
+
+    static void f2(int y) {
+        std::cout << "num: " << num << std::endl;
+        // p, q, r are inaccessible without qualification
+        // If p, q, r are used without qualification then default qualification
+        // of this pointer will be applied and static methods does not have this pointer
+
+        X objX(100, 200, 300);
+        objX.p = 1000;
+        objX.q = 2000;
+    }
+};
+
+int X::num = 10;
